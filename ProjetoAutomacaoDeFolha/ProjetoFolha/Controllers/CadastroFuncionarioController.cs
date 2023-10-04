@@ -24,6 +24,7 @@ namespace ProjetoFolha.Controllers
         public IActionResult Index(CadastroFuncionarioModel cadastro)
         {
             Console.WriteLine("Cadastro" + cadastro);
+            string sexo = cadastro.sexoSelecionado;
             _cadastroFuncionarioRepositorio.Adicionar(cadastro);
             return RedirectToAction("Index");
 

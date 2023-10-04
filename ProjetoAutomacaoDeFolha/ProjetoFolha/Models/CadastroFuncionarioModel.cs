@@ -30,6 +30,8 @@ public class CadastroFuncionarioModel
 
     public string senha { get; set; }
 
+    public string sexoSelecionado { get; set; }
+
    
 
 

@@ -47,6 +47,10 @@ namespace ProjetoFolha.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("sexoSelecionado")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.ToTable("CadastroFuncionarioModel");

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\Downloads\\_PIM GRUPO\\ProjetoFolha\\ProjetoFolha.csproj": {}
+    "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\Downloads\\_PIM GRUPO\\ProjetoFolha\\ProjetoFolha.csproj": {
+    "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\Downloads\\_PIM GRUPO\\ProjetoFolha\\ProjetoFolha.csproj",
+        "projectUniqueName": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
         "projectName": "ProjetoFolha",
-        "projectPath": "C:\\Users\\jonat\\Downloads\\_PIM GRUPO\\ProjetoFolha\\ProjetoFolha.csproj",
-        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\Downloads\\_PIM GRUPO\\ProjetoFolha\\obj\\",
+        "projectPath": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
+        "packagesPath": "C:\\Users\\jeffe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jeffe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,14 +40,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[12.0.1, )"
-            },
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[12.0.1, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.11, )"
@@ -87,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

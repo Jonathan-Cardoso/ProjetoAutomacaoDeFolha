@@ -26,7 +26,7 @@ namespace ProjetoFolha
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
-            // Configurar serviços de autenticação
+            // Configurar serviï¿½os de autenticaï¿½ï¿½o
             /*builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
@@ -36,7 +36,7 @@ namespace ProjetoFolha
                     {
                         OnSignedIn = context =>
                         {
-                            // Configurar a sessão com o marcador de autenticação
+                            // Configurar a sessï¿½o com o marcador de autenticaï¿½ï¿½o
                             context.HttpContext.Session.SetString("IsAuthenticated", "true");
                             return Task.CompletedTask;
                         },
@@ -44,7 +44,7 @@ namespace ProjetoFolha
                     };
                 });*/
 
-            // Adicionar serviços de sessão
+            // Adicionar serviï¿½os de sessï¿½o
             builder.Services.AddSession();
 
             var app = builder.Build();
