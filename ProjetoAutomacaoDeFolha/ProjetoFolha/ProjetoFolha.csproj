@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\CadastroBeneficio.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\assets\css\styles.css" />
     <None Include="wwwroot\assets\img\apple-touch-icon.png" />
     <None Include="wwwroot\assets\img\card.jpg" />

@@ -262,6 +262,9 @@
             "fileVersion": "7.0.22.51805"
           }
         }
+        "runtime": {
+          "ProjetoFolha.dll": {}
+        }
       }
     }
   },
