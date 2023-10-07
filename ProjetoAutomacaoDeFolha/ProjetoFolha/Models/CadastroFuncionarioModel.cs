@@ -11,8 +11,7 @@ public class CadastroFuncionarioModel
     // Informações de Cadastro 
 
     [Key]
-    [Required]
-    public string Id { get; set; }
+    public int Id { get; set; }
 
    [Required(ErrorMessage = "O nome é obrigatório")]
     public string nome {  get; set; }
