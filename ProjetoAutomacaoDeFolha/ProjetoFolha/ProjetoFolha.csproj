@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="Views\CadastroBeneficio.cshtml" />
+    <Content Remove="wwwroot\Beneficios.png" />
   </ItemGroup>
 
   <ItemGroup>
