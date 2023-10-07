@@ -32,8 +32,7 @@ public class CadastroFuncionarioModel
 
     public string sexoSelecionado { get; set; }
 
-   
-
+    public double salarioBruto { get; set; }
 
     
 }
