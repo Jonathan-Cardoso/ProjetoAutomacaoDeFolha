@@ -24,16 +24,21 @@ public class CadastroFuncionarioModel
     [Required(ErrorMessage = "A data é obrigatória")]
     public string dataAdmissao { get; set; }
 
-    [Required(ErrorMessage = "A CTPS é obrigatoria")]
-
+    [Required(ErrorMessage = "O email é obrigatorio")]
+    
     public string email { get; set; }
 
+    [Required(ErrorMessage = "A senha é obrigatoria")]
     public string senha { get; set; }
+
+    [Required(ErrorMessage = "A confirmação de senha é obrigatoria")]
     [NotMapped]
     public string ConfirmarSenha { get; set; }
 
     public string sexoSelecionado { get; set; }
 
+
+    [Required(ErrorMessage = "O salario bruto é obrigatorio")]
     public double salarioBruto { get; set; }
 
     

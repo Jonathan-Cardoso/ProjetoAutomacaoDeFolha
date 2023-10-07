@@ -26,8 +26,9 @@ namespace ProjetoFolha.Controllers
         {
             Console.WriteLine("Cadastro" + cadastro);
             string senha = cadastro.senha;
-            string encodedStr = Convert.ToBase64String(Encoding.UTF8.GetBytes(senha));
-            teste.criptografa(encodedStr);
+            string encodedStr = Convert.ToBase64String(Encoding.UTF8.GetBytes(senha));// Criptografia da senha
+            cadastro.senha = encodedStr;
+            //string inputStr = Encoding.UTF8.GetString(Convert.FromBase64String(encodedStr));// discriptografia da senha 
             string sexo = cadastro.sexoSelecionado;
             _cadastroFuncionarioRepositorio.Adicionar(cadastro);
             return RedirectToAction("Index");
