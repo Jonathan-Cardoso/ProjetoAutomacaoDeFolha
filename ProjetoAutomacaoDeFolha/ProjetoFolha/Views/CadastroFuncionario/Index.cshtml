@@ -42,17 +42,36 @@
                                     <input type="text" asp-for="cpf" class="form-control">
                                 </div>
                             </div>
+                            <!-- Validação de senha --> 
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Criar Senha</label>
                                 <div class="col-sm-10">
-                                    <input type="text" asp-for="senha" class="form-control">
+                                    <input type="password" asp-for="senha" class="form-control" id="senha">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Repita a Senha</label>
                                 <div class="col-sm-10">
-                                    <input type="text" asp-for="Id" class="form-control">
+                                    <input type="password" asp-for="ConfirmarSenha" class="form-control" id="confirmarSenha">
                                 </div>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        var senha = document.getElementById('senha');
+                                        var confirmarSenha = document.getElementById('confirmarSenha');
+
+                                        function validarSenha() {
+                                            if (senha.value !== confirmarSenha.value) {
+                                                confirmarSenha.setCustomValidity('As senhas não coincidem');
+                                            } else {
+                                                confirmarSenha.setCustomValidity('');
+                                            }
+                                        }
+
+                                        senha.addEventListener('change', validarSenha);
+                                        confirmarSenha.addEventListener('keyup', validarSenha);
+                                    });
+                                </script>
+                                
                             </div>
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Cargo</label>
