@@ -3,72 +3,52 @@
     Layout = "_LayoutMain";
 }
 
-
 <main id="main" class="main">
-
-    <div class="pagetitle">
-        <h1>Consulta Benefício</h1>
-    </div>
-     <section class="section">
-        <div class="row">
-            <div class="col-lg-6">
-
-                <div class="row">
-                    <div class="col-10">
-                        <div class=" = " card">
-                            <div class="card_body">
-                                <table border="1">
-                                    <tr>
-                                        
-                                    </tr>
-                                </table>
-
-                            </div>
-
-                        </div>
-                    </div>
-                
-
-                    <div class="col-6">
-                        <div class=" = " card">
-                            <div class="card body">
-                                <h5 class=" card - card-title"> Meu Cadastro <style="width:40;height:40" class="btn btn-primary"><img src="~/usuario.png" width="40" height="40">
-                                <p class=" card text"> Antonio da Silva</p>
-                                <p class=" card text"> Analista de Qualidade</p>
-                                <p class=" card text"> Admissão: 01/05/2023</p>
-                                <p class=" card text"> CPF: 120.456.895-78</p>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6">
-                        <div class=" = " card">
-                            <div class="card body">                                
-                                <h5 class=" card - card-title"> Beneficios <style="width:40;height:40" class="btn btn-primary"><img src="~/beneficio.png" width="40" height="40">
-                                <p class=" card text"> Vale Alimentação</p>
-                                <p class=" card text"> Desconto R$0,00</p>
-                                <p class=" card text"> Data de corte: 30</p>
-                                <p class=" card text"> Crédito: Fixo Mensal</p>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <div class="col-sm-10">
-                            <a asp-controller="Home" asp-action="Index" class="btn btn-primary" > Voltar</a >
-                           
-
-                        </div>
-                    </div>
-
-                  </div>
-            </div>
-
-
+    <div class="text-center">
+        <div class="pagetitle">
+            <h1 class="display-4">Consulta Benefício</h1>
         </div>
-     </div>
-  </section>
-  </main>
+        <section class="section">
+            <div class="row">
+                <div class="text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-row bd-highlight mb-3">
+                                <h5 class="card-title">Benefícios</h5>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> Meu Cadastro <img style="width:40;height:40" src="~/usuario.png" width="40" height="40"></h5>
+                                            <p class="card-text"> Antonio da Silva</p>
+                                            <p class="card-text"> Analista de Qualidade</p>
+                                            <p class="card-text"> Admissão: 01/05/2023</p>
+                                            <p class="card-text"> CPF: 120.456.895-78</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> Beneficios <img style="width:40;height:40" src="~/beneficio.png" width="40" height="40"></h5>
+                                            <p class="card-text"> Vale Alimentação</p>
+                                            <p class="card-text"> Desconto R$0,00</p>
+                                            <p class="card-text"> Data de corte: 30</p>
+                                            <p class="card-text"> Crédito: Fixo Mensal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary"> Voltar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

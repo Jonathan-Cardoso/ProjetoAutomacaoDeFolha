@@ -12,6 +12,11 @@ namespace ProjetoFolha.Repositorio
             _context = context;
         }
 
+        public List<CadastroFuncionarioModel> BuscarTodos()
+        {
+            return _context.CadastroFuncionarioModel.ToList();
+        }
+
         public CadastroFuncionarioModel Adicionar(CadastroFuncionarioModel cadastro)
         {
             Console.WriteLine("Cadastro: " + cadastro.ToString());
