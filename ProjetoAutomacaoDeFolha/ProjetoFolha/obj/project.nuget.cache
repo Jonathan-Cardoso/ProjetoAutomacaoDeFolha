@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k6lgUBNXxJIVlDijm1M20dsoAzaS1G92eCGAEpvtD6CvRMKzJM9NJGzmWxiArRQaCq+63MDsnvpvPuROP9ryUA==",
+  "dgSpecHash": "9m/14srDtFvXgoAp8NW//YklyUjG66QKT4vq2H+94mpMwCTi2bD6zQw5ZNW/42dESM2u4Yolu16+XJeJH8wWmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
+  "projectFilePath": "E:\\Usuarios\\Documentos\\GitHub\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jeffe\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\jeffe\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.11\\microsoft.entityframeworkcore.7.0.11.nupkg.sha512",

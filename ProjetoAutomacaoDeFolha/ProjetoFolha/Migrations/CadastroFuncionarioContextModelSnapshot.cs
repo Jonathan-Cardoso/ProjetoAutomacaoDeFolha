@@ -20,8 +20,9 @@ namespace ProjetoFolha.Migrations
 
             modelBuilder.Entity("ProjetoFolha.Models.CadastroFuncionarioModel", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<string>("cargo")
                         .IsRequired()
@@ -42,6 +43,9 @@ namespace ProjetoFolha.Migrations
                     b.Property<string>("nome")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<double>("salarioBruto")
+                        .HasColumnType("double");
 
                     b.Property<string>("senha")
                         .IsRequired()

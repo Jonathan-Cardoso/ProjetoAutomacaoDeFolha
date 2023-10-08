@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {}
+    "E:\\Usuarios\\Documentos\\GitHub\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {
+    "E:\\Usuarios\\Documentos\\GitHub\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
+        "projectUniqueName": "E:\\Usuarios\\Documentos\\GitHub\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
         "projectName": "ProjetoFolha",
-        "projectPath": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
+        "projectPath": "E:\\Usuarios\\Documentos\\GitHub\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
         "packagesPath": "C:\\Users\\jeffe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\obj\\",
+        "outputPath": "E:\\Usuarios\\Documentos\\GitHub\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jeffe\\AppData\\Roaming\\NuGet\\NuGet.Config",
