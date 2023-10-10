@@ -37,7 +37,7 @@
                                 <td>@funcionario.email</td>
                                 <td>@funcionario.dataAdmissao</td>
                                 <td>@funcionario.cargo</td>
-                                <td>@funcionario.salarioBruto</td>
+                                <td>@funcionario.salarioBruto.ToString("C")</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Exemplo básico">
                                         <a role="button" class="btn btn-primary" asp-router-id="@funcionario.Id" asp-controller="CadastroFuncionario" asp-action="EditarFuncionario">Editar</a>
