@@ -44,7 +44,12 @@
                                         <a role="button" class="btn btn-warning" asp-router-id="@funcionario.Id">Inativar</a>
                                         <a role="button" class="btn btn-info" asp-router-id="@funcionario.Id">Detalhes</a>
                                     </div>
-                                </td>
+                                </td
+                                <div class="mb-3">
+                                    <div class="d-flex flex-row bd-highlight mb-3">
+                                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary"> Voltar</a>
+                                    </div>
+                                </div>
                             </tr>
                         }
                     }
