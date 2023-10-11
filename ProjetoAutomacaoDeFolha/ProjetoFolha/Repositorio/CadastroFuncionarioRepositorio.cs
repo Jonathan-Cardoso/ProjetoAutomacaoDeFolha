@@ -12,6 +12,12 @@ namespace ProjetoFolha.Repositorio
             _context = context;
         }
 
+        public CadastroFuncionarioModel BuscarPorLogin(string login)
+        {
+            return _context.CadastroFuncionarioModel.FirstOrDefault(x => x.email.ToLower() == login);
+
+        }
+
         public List<CadastroFuncionarioModel> BuscarTodos()
         {
             return _context.CadastroFuncionarioModel.ToList();

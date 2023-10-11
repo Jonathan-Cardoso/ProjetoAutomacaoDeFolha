@@ -1,17 +1,34 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using ProjetoFolha.Models;
+using ProjetoFolha.Repositorio;
 using System.Diagnostics;
 
 namespace ProjetoFolha.Controllers
 {
     public class LoginController : Controller
     {
-        private const string login = "a";
-        private const string passwd = "a";
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        public LoginController(IHttpContextAccessor httpContextAccessor)
+        private readonly ICadastroFuncionarioRepositorio _loginFuncionario;
+
+        public LoginController(ICadastroFuncionarioRepositorio loginFuncionario)
         {
+            _loginFuncionario = loginFuncionario;
+            loginFuncionario2 = loginFuncionario.BuscarPorLogin().email;
+        }
+
+
+
+        private string login; //= "a";
+        private  string passwd; //= "a";
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private object httpContextAccessor;
+        private object loginFuncionario;
+
+        public LoginController(IHttpContextAccessor httpContextAccessor)
+        {   
+
             _httpContextAccessor = httpContextAccessor;
+            
         }
         public IActionResult Index()
         {
@@ -47,12 +64,26 @@ namespace ProjetoFolha.Controllers
         }
 
 
+      /*  private bool LoginSimulado(LoginViewModel viewModel)
+        {
+
+            var user = loginFuncionario; //SingleOrDefault(u => u.Email == ViewModel.Email && u.Senha == ViewModel.Senha);
+           // return user != null;
+            if (viewModel.Email == user.email && viewModel.Senha == user.senha)
+               return true;
+             else
+                return false;
+        }*/
+
         private bool LoginSimulado(LoginViewModel viewModel)
         {
-            if(viewModel.Email == login && viewModel.Senha == passwd)
-               return true;
+            login = viewModel.Email;
+            passwd = viewModel.Senha;
+           if (loginFuncionario.BuscarPorLogin() == login && viewModel.Senha == passwd)
+                return true;
             else
                 return false;
+            
         }
     }
 }
