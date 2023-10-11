@@ -1,76 +1,127 @@
-﻿@{
+﻿@model HoleriteModel
+@{
     ViewData["Title"] = "Holerite";
     Layout = "_LayoutMain";
 }
-@model HoleriteModel
+<main id="main class="main">
+    <div class="text-center">
+        <div class="pagetitle">
+            <h1>Holerite</h1>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="text-center">
+                <div class="card">
+                    <div class="card body">
+                        <div class="d-flex flex-row bd-highlight mb-3">
+                            <h5 class="card title"> Holerite</h5>
+                        </div>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holerite</title>
-    <style>
-        /* Estilos CSS para a formatação da tabela */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
 
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+                        <header>
+                            <style>
+                                /* Estilos CSS para a formatação da tabela */
+                                table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <h1>Holerite de Funcionário</h1>
-    <table>
-        <tr>
-            <th>Descrição</th>
-            <th>Valor</th>
-        </tr>
-        <tr>
-            <td>Nome do Funcionário</td>
-            <td>João da Silva</td>
-        </tr>
-        <tr>
-            <td>Cargo</td>
-            <td>Analista de Vendas</td>
-        </tr>
-        <tr>
-            <td>Salário Base</td>
-            <td>R$ 3.500,00</td>
-        </tr>
-        <tr>
-            <td>Horas Extras</td>
-            <td>R$ 250,00</td>
-        </tr>
-        <tr>
-            <td>Desconto INSS</td>
-            <td>R$ 350,00</td>
-        </tr>
-        <tr>
-            <td>Desconto IR</td>
-            <td>R$ 100,00</td>
-        </tr>
-        <tr>
-            <td>Total de Vencimentos</td>
-            <td>R$ 3.750,00</td>
-        </tr>
-        <tr>
-            <td>Total de Descontos</td>
-            <td>R$ 450,00</td>
-        </tr>
-        <tr>
-            <td>Salário Líquido</td>
-            <td>R$ 3.300,00</td>
-        </tr>
-    </table>
-</body>
-</html>
+                                th, td {
+                                    border: 1px solid #dddddd;
+                                    text-align: left;
+                                    padding: 8px;
+                                }
+
+                                tr:nth-child(even) {
+                                    background-color: #f2f2f2;
+                                }
+
+                                th, td{
+                                   padding-top:10px;
+                                   padding-right:70px;
+                                }
+
+                            </style>
+
+
+                        </header>
+
+
+                        <body>
+                            <table style="width:50%">
+                                                                                              
+                                <tr>
+                                    <th style= "width:50%">Descrição</th>
+                                    <th style= "width:50%">Valor</th>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Nome do Funcionário</td>
+                                    <td>Antonio da Silva</td>
+                                </tr>
+                                <tr>
+                                    <td>Cargo</td>
+                                    <td>Analista de Qualidade</td>
+                                </tr>
+                                <tr>
+                                    <td>Salário Base</td>
+                                    <td>R$ 3.500,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Horas Extras</td>
+                                    <td>R$ 250,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Desconto INSS</td>
+                                    <td>R$ 350,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Desconto IR</td>
+                                    <td>R$ 100,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Total de Vencimentos</td>
+                                    <td>R$ 3.750,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Total de Descontos</td>
+                                    <td>R$ 450,00</td>
+                                </tr>
+                                <tr>
+                                    <td>Salário Líquido</td>
+                                    <td>R$ 3.300,00</td>
+                                </tr>
+                            </table>
+                        </body>
+                        </html>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+
+
