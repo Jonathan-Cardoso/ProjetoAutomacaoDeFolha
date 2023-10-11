@@ -4,100 +4,50 @@
 }
 @model RecibosDePagamentoModel
 
-
 <main id="main" class="main">
 
     <section class="section">
         <div class="text-center">
- <!DOCTYPE html>
- <html lang="pt-BR">
-  <head>
-    <link href="/Content/bootstrap.css" rel="stylesheet" />
-    <link href="/Content/bootstrap-responsive.css" rel="stylesheet" />
-
-    <meta name="viewport" content="width=device-width" />
-    <title>Holerith On-Line</title>
-    <link rel="shortcut icon" href="/Content/img/logoIcone.ico">
-    <script src="/Scripts/placeholder.js"></script>
-</head>
-<body class="bodynormal">
-    <div>
-        <div class="span2">
-            <img src="/Content/img/Holerith.png" />
+            <table class="">
+                <thead>
+                    <tr class="">
+                        <th scope="col">
+                            <a href="/Holerith/Painel?sort=data&amp;sortdir=ASC">Data</a>
+                        </th>
+                        <th scope="col">
+                            <a href="/Holerith/Painel?sort=nomeCalc&amp;sortdir=ASC">Tipo Pagamento</a>
+                        </th>
+                        <th scope="col">
+                            <a href="/Holerith/Painel?sort=valor&amp;sortdir=ASC">Valor R$</a>
+                        </th>
+                        <th scope="col">
+                            <a href="/Holerith/Painel?sort=Visualizar+Documento&amp;sortdir=ASC">Visualizar Documento</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="webgrid-row-style">
+                        <td class="webgrid-columns"><p>01/06/2023</p></td>
+                        <td class="webgrid-columns"><p>PAGAMENTO MENSAL</p></td>
+                        <td class="webgrid-columns"><p style="text-align:center">2.448,00</p></td>
+                        <td class="webgrid-columns">
+                            <div class="pagination-centered">
+                                <a href="/Holerith/PainelHolerith/882021?acesso=4">Visualizar</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="webgrid-alternating-row">
+                        <td class="webgrid-columns"><p>01/07/2023</p></td>
+                        <td class="webgrid-columns"><p>PAGAMENTO MENSAL</p></td>
+                        <td class="webgrid-columns"><p style="text-align:center">2.448,00</p></td>
+                        <td class="webgrid-columns">
+                            <div class="pagination-centered">
+                                <a href="/Holerith/PainelHolerith/871320?acesso=2">Visualizar</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="span3">
-            <br />
-            <br />
-            <strong>Informações: </strong> <br />
-            <strong>Nome:</strong> Antonio da Silva <br />
-            <strong>Id:</strong> 987<br />
-            <strong>Empresa:</strong> JNGCV Software LTDA<br />
-
-        </div>
-        <br />
-        <br />
-
-
-        <table class="">
-            <thead>
-                <tr class="">
-                    <th scope="col">
-                        <a href="/Holerith/Painel?sort=data&amp;sortdir=ASC">Data</a>
-                    </th>
-                    <th scope="col">
-                        <a href="/Holerith/Painel?sort=nomeCalc&amp;sortdir=ASC">Tipo Pagamento</a>
-                    </th>
-                    <th scope="col">
-                        <a href="/Holerith/Painel?sort=valor&amp;sortdir=ASC">Valor R$</a>
-                    </th>
-                    <th scope="col">
-                        <a href="/Holerith/Painel?sort=Visualizar+Documento&amp;sortdir=ASC">Visualizar Documento</a>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="webgrid-row-style">
-
-                    <td class="webgrid-columns"><p>01/06/2023</p></td>
-                    <td class="webgrid-columns"><p>PAGAMENTO MENSAL</p></td>
-                    <td class="webgrid-columns"><p style="text-align:center">2.448,00</p></td>
-                    <td class="webgrid-columns">
-                        <div class="pagination-centered">
-
-                            <a href="/Holerith/PainelHolerith/882021?acesso=4">Visualizar</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="webgrid-alternating-row">
-                    <td class="webgrid-columns"><p>01/07/2023</p></td>
-                    <td class="webgrid-columns"><p>PAGAMENTO MENSAL</p></td>
-                    <td class="webgrid-columns"><p style="text-align:center">2.448,00</p></td>
-                    <td class="webgrid-columns">
-                        <div class="pagination-centered">
-
-                            <a href="/Holerith/PainelHolerith/871320?acesso=2">Visualizar</a>
-                        </div>
-                    </td>
-                </tr>
-
-
-            </tbody>
-        </table>
-
-    </div>
-    </div>
-    <div class="row">
-        <footer class="pull-rigth">
-            <div class="navbar navbar-fixed-bottom ">
-                <div class="modal-footer-GDoc">
-                    <p class="pagination-centered">Copyright © 2023 - JNGCV Software LTDA - Todos os Direitos Reservados.</p>
-                </div>
-            </div>
-
-        </footer>
-    </div>
-</body>
-    </html>
-    </div>
-</section>
+    </section>
 </main>
