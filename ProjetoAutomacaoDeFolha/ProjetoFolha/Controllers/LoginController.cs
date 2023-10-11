@@ -8,21 +8,22 @@ namespace ProjetoFolha.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly ICadastroFuncionarioRepositorio _loginFuncionario;
+        /*private readonly ICadastroFuncionarioRepositorio _loginFuncionario;
 
         public LoginController(ICadastroFuncionarioRepositorio loginFuncionario)
         {
             _loginFuncionario = loginFuncionario;
-            loginFuncionario2 = loginFuncionario.BuscarPorLogin().email;
-        }
+            
+        }*/
 
 
-
-        private string login; //= "a";
-        private  string passwd; //= "a";
+        private const string login = "a";
+        private const string passwd = "a";
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private object httpContextAccessor;
-        private object loginFuncionario;
+
+
+
+    
 
         public LoginController(IHttpContextAccessor httpContextAccessor)
         {   
@@ -64,18 +65,18 @@ namespace ProjetoFolha.Controllers
         }
 
 
-      /*  private bool LoginSimulado(LoginViewModel viewModel)
+        private bool LoginSimulado(LoginViewModel viewModel)
         {
 
-            var user = loginFuncionario; //SingleOrDefault(u => u.Email == ViewModel.Email && u.Senha == ViewModel.Senha);
-           // return user != null;
-            if (viewModel.Email == user.email && viewModel.Senha == user.senha)
+            //var user = loginFuncionario; //SingleOrDefault(u => u.Email == ViewModel.Email && u.Senha == ViewModel.Senha);
+            //return user != null;
+            if (viewModel.Email == login && viewModel.Senha == passwd)
                return true;
              else
                 return false;
-        }*/
+        }
 
-        private bool LoginSimulado(LoginViewModel viewModel)
+        /*private bool LoginSimulado(LoginViewModel viewModel)
         {
             login = viewModel.Email;
             passwd = viewModel.Senha;
@@ -84,6 +85,6 @@ namespace ProjetoFolha.Controllers
             else
                 return false;
             
-        }
+        }*/
     }
 }
