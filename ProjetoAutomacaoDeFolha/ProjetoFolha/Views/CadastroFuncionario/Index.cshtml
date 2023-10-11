@@ -41,20 +41,18 @@
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Exemplo básico">
                                         <a role="button" class="btn btn-primary" asp-router-id="@funcionario.Id" asp-controller="CadastroFuncionario" asp-action="EditarFuncionario">Editar</a>
-                                        <a role="button" class="btn btn-warning" asp-router-id="@funcionario.Id">Inativar</a>
+                                        <a role="button" class="btn btn-danger" asp-router-id="@funcionario.Id">Inativar</a>
                                         <a role="button" class="btn btn-info" asp-router-id="@funcionario.Id">Detalhes</a>
                                     </div>
-                                </td
-                                <div class="mb-3">
-                                    <div class="d-flex flex-row bd-highlight mb-3">
-                                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary"> Voltar</a>
-                                    </div>
-                                </div>
+                                </td>
                             </tr>
                         }
                     }
                 </tbody>
             </table>
+            <div class="d-flex justify-content-between">
+                <a role="button" class="btn btn-secondary" asp-controller="CadastroFuncionario" asp-action="Index"> Voltar</a>
+            </div>
         </div>
     </section>
 </main>
