@@ -40,7 +40,8 @@ namespace ProjetoFolha.Controllers
 
         [HttpPost]
         public IActionResult CadastroFuncionario(CadastroFuncionarioModel cadastro)
-        {
+        {   
+            //Valida os campos do formulario
             if (string.IsNullOrEmpty(cadastro.nome) || string.IsNullOrEmpty(cadastro.senha) || string.IsNullOrEmpty(cadastro.email))
             {
                 ModelState.AddModelError("", "Por favor, preencha todos os campos antes de cadastrar.");
