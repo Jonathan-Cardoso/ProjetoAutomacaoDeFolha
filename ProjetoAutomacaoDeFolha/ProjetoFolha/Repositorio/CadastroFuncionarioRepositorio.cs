@@ -18,6 +18,11 @@ namespace ProjetoFolha.Repositorio
 
         }
 
+        public CadastroFuncionarioModel ListarPorId(int id)
+        {
+            return _context.CadastroFuncionarioModel.FirstOrDefault(x => x.Id == id);    
+        }
+
         public List<CadastroFuncionarioModel> BuscarTodos()
         {
             return _context.CadastroFuncionarioModel.ToList();
@@ -30,6 +35,29 @@ namespace ProjetoFolha.Repositorio
             _context.SaveChanges();
             return cadastro;
         }
+
+        public CadastroFuncionarioModel Atualizar(CadastroFuncionarioModel cadastro)
+        {
+
+            CadastroFuncionarioModel cadastroDB = ListarPorId(cadastro.Id);
+            if (cadastroDB == null) throw new System.Exception("Houve um erro na atualização do funcionario!");
+
+            cadastroDB.nome = cadastro.nome;
+            cadastroDB.email = cadastro.email;
+            cadastroDB.cpf = cadastro.cpf;
+            cadastroDB.dataAdmissao = cadastro.dataAdmissao;
+            cadastroDB.senha = cadastro.senha;
+            cadastroDB.ConfirmarSenha = cadastro.ConfirmarSenha;
+            cadastroDB.cargo = cadastro.cargo;
+            cadastroDB.salarioBruto = cadastro.salarioBruto;;
+            cadastroDB.sexoSelecionado = cadastro.sexoSelecionado;
+
+            Console.WriteLine("Cadastro: " + cadastroDB.ToString());
+            _context.CadastroFuncionarioModel.Update(cadastroDB);
+            _context.SaveChanges();
+            return cadastroDB;
+        }
+
     }
 
 }

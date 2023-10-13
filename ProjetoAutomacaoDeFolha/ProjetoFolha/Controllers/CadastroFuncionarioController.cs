@@ -28,9 +28,10 @@ namespace ProjetoFolha.Controllers
             return View();
         }
 
-        public IActionResult EditarFuncionario()
+        public IActionResult EditarFuncionario(int id)
         {
-            return View();
+            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
+            return View(funcionario);
         }
         /*
         public IActionResult InativarFuncionario()
@@ -61,6 +62,7 @@ namespace ProjetoFolha.Controllers
         [HttpPost]
         public IActionResult EditarFuncionario(CadastroFuncionarioModel cadastro)
         {
+            
             if (string.IsNullOrEmpty(cadastro.nome) || string.IsNullOrEmpty(cadastro.senha) || string.IsNullOrEmpty(cadastro.email))
             {
                 ModelState.AddModelError("", "Por favor, preencha todos os campos antes de cadastrar.");
@@ -72,7 +74,7 @@ namespace ProjetoFolha.Controllers
             cadastro.senha = encodedStr;
             //string inputStr = Encoding.UTF8.GetString(Convert.FromBase64String(encodedStr));// discriptografia da senha 
             string sexo = cadastro.sexoSelecionado;
-            _cadastroFuncionarioRepositorio.Adicionar(cadastro);
+            _cadastroFuncionarioRepositorio.Atualizar(cadastro);
             return RedirectToAction("Index");
 
         }

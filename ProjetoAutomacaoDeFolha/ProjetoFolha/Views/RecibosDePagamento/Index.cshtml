@@ -2,34 +2,66 @@
     ViewData["Title"] = "RecibosDePagamento";
     Layout = "_LayoutMain";
 }
+
 @model RecibosDePagamentoModel
 
 <main id="main" class="main">
 
     <section class="section">
         <div class="text-center">
-            <table class="">
-                <thead>
-                    <div class="pagetitle">
-                        <h1 class="display-4">Recibos De Pagamento</h1>
+            <div class="pagetitle">
+                <h1 class="display-4">Recibos De Pagamento</h1>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Informações do Funcionário</h5>
+                            <div class="mb-3">
+                                <strong class="info-label">Id:</strong> 987
+                            </div>
+                            <div class="mb-3">
+                                <strong class="info-label">Nome:</strong> Antonio da Silva
+                            </div>
+                        </div>
                     </div>
-                    <style>
-                        /* Estilos CSS para a formatação da tabela */
-                        table {
-                            width: 100%;
-                            border-collapse: collapse;
-                        }
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Informações da Empresa</h5>
+                            <div class="mb-3">
+                                <strong class="info-label">Nome:</strong> JNGCV Software LTDA
+                            </div>
+                            <div class="mb-3">
+                                <strong class="info-label">Razão Social:</strong> JNGCV Software LTDA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        th, td {
-                            border: 1px solid #dddddd;
-                            text-align: left;
-                            padding: 8px;
-                        }
+            <style>
+                /* Estilos CSS para a formatação da tabela */
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
 
-                        tr:nth-child(even) {
-                            background-color: #f2f2f2;
-                        }
-                    </style>
+                th, td {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+            </style>
+
+            <table class="text-center">
+                <thead>
                     <tr class="">
                         <th scope="col">
                             <a href="/Holerith/Painel?sort=data&amp;sortdir=ASC">Data</a>
@@ -49,20 +81,20 @@
                     <tr class="webgrid-row-style">
                         <td class="webgrid-columns"><p>01/06/2023</p></td>
                         <td class="webgrid-columns"><p>PAGAMENTO MENSAL</p></td>
-                        <td class="webgrid-columns"><p style="text-align:center">2.448,00</p></td>
+                        <td class="webgrid-columns">2.448,00</td>
                         <td class="webgrid-columns">
                             <div class="pagination-centered">
-                                <a href="/Holerith/PainelHolerith/882021?acesso=4">Visualizar</a>
+                                <a role="button" class="btn btn-primary" asp-controller="Holerite" asp-action="Index">Visualizar</a>
                             </div>
                         </td>
                     </tr>
                     <tr class="webgrid-alternating-row">
                         <td class="webgrid-columns"><p>01/07/2023</p></td>
                         <td class="webgrid-columns"><p>PAGAMENTO MENSAL</p></td>
-                        <td class="webgrid-columns"><p style="text-align:center">2.448,00</p></td>
+                        <td class="webgrid-columns">2.448,00</td>
                         <td class="webgrid-columns">
                             <div class="pagination-centered">
-                                <a href="/Holerith/PainelHolerith/871320?acesso=2">Visualizar</a>
+                                <a role="button" class="btn btn-primary" asp-controller="Holerite" asp-action="Index">Visualizar</a>
                             </div>
                         </td>
                     </tr>

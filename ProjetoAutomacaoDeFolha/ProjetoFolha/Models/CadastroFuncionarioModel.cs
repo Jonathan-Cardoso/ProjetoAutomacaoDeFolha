@@ -25,7 +25,7 @@ public class CadastroFuncionarioModel
     public string dataAdmissao { get; set; }
 
     [Required(ErrorMessage = "O email é obrigatorio")]
-    
+    [EmailAddress(ErrorMessage = "Por favor, insira um endereço de e-mail válido.")]
     public string email { get; set; }
 
     [Required(ErrorMessage = "A senha é obrigatoria")]
