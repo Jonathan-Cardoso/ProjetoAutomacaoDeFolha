@@ -41,5 +41,8 @@ public class CadastroFuncionarioModel
     [Required(ErrorMessage = "O salario bruto é obrigatorio")]
     public double salarioBruto { get; set; }
 
-    
+    public bool SenhaValida(string Senha)  
+    {
+        return senha == Senha;
+    }
 }

@@ -34,7 +34,13 @@
     <link href="@Url.Content("~/assets/css/styles.css")" rel="stylesheet">
 
 </head>
-
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role"alert>
+        <button type="button" class=" btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
 <body>
     <main>
         <div class="container">
