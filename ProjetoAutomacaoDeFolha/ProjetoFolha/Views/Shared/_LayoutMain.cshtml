@@ -1,6 +1,7 @@
 ﻿@{
 
 }
+@model C
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,59 +32,26 @@
 </head>
 
 <body>
-    <header id="header" class="header fixed-top d-flex align-items-center">
+<header id="header" class="header fixed-top d-flex align-items-center">
 
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="#" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">Folha de Pagamento</span>
-            </a>
-            <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div>
-        <!--Icone de busca aqui posterior se necessário e botão logout-->
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="#" class="logo d-flex align-items-center">
+            <img src="assets/img/logo.png" alt="">
+            <span class="d-none d-lg-block">Folha de Pagamento</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    <!--Icone de busca aqui posterior se necessário e botão logout-->
 
-    </header>
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
+</header>
+<!-- ======= Sidebar ======= -->
 
-        <ul class="sidebar-nav" id="sidebar-nav">
-
-            <li class="nav-item">
-                <a class="nav-link " asp-controller="CadastroFuncionario" asp-action="Index">
-                    <i class="bi bi-grid"></i>
-                    <span>Cadastro Funcionário</span>
-                </a>
-            </li><!-- End Menu 01 Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link " href="@Url.Action("Index","ConsultaBeneficio")">
-                    <i class="bi bi-menu-button-wide"></i>
-                    <span>Consulta Benefício</span>
-                </a>
-            </li><!-- End Menu 02 Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link " href="@Url.Action("Index","RecibosDePagamento")">
-                    <i class="bi bi-circle"></i>
-                    <span>Recibos de Pagamento</span>
-                </a>
-            </li><!-- End Menu 03 Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link " href="@Url.Action("Index","Holerite")">
-                    <i class="bi bi-journal-text"></i>
-                    <span>Holerite</span>
-                </a>
-            </li><!-- End Menu 04 Nav -->
-
-        </ul>
-
-    </aside><!-- End Sidebar-->
-    @RenderBody();
+@await Component.InvokeAsync("Menu");
+@RenderBody();
 
 
-    <!-- Template Main JS File -->
-    <script src="@Url.Content("~/assets/js/main.js")"></script>
+<!-- Template Main JS File -->
+<script src="@Url.Content("~/assets/js/main.js")"></script>
 </body>
 
 </html>

@@ -1,0 +1,51 @@
+﻿@model CadastroFuncionarioModel
+
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link " asp-controller="CadastroFuncionario" asp-action="Index">
+                <i class="bi bi-grid"></i>
+                <span>Cadastro Funcionário</span>
+            </a>
+        </li><!-- End Menu 01 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link " href="@Url.Action("Index","ConsultaBeneficio")">
+                <i class="bi bi-menu-button-wide"></i>
+                <span>Consulta Benefício</span>
+            </a>
+        </li><!-- End Menu 02 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link " href="@Url.Action("Index","RecibosDePagamento")">
+                <i class="bi bi-circle"></i>
+                <span>Recibos de Pagamento</span>
+            </a>
+        </li><!-- End Menu 03 Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link " href="@Url.Action("Index","Holerite")">
+                <i class="bi bi-journal-text"></i>
+                <span>Holerite</span>
+            </a>
+        </li><!-- End Menu 04 Nav -->
+        <li class="nav-item">
+            <a class="nav-link " asp-controller="LoginController" asp-action="Sair">
+                <!-- alteração!! -->
+                <i class="bi bi-box-arrow-left"></i>
+                <span>Sair</span>
+            </a>
+        </li><!-- End Menu 04 Nav -->
+        <li class="nav-item">
+            <a class="nav-link" >
+                <!-- alteração!! -->
+                <i class="bi bi-person"></i>
+                <span>Olá, @Model.nome</span>
+            </a>
+        </li><!-- End Menu 04 Nav -->
+
+    </ul>
+
+</aside><!-- End Sidebar-->
