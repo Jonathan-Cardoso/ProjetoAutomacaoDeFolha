@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using ProjetoFolha.Data;
+using ProjetoFolha.Helper;
 using ProjetoFolha.Repositorio;
 
 namespace ProjetoFolha
@@ -25,7 +26,15 @@ namespace ProjetoFolha
             builder.Services.AddControllersWithViews();
 
             // IoC
-            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();// injetando na atraves da interface criada, quando ele chama a interface ele irá implmentar a classe 
+            builder.Services.AddScoped<Helper.ISession, Session>();// injentar na classe, quando ele chama a interface ele irá implmentar a classe
+
+            //Configuração da sessão
+            builder.Services.AddSession(o =>
+            {
+                o.Cookie.HttpOnly = true;
+                o.Cookie.IsEssential = true;
+            });
 
 
             // Configurar servi�os de autentica��o
@@ -70,6 +79,8 @@ namespace ProjetoFolha
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();//Para habilitar as sessões
 
             app.MapControllerRoute(
                 name: "default",
