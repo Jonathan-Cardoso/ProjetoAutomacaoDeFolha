@@ -24,7 +24,8 @@ namespace ProjetoFolha.Controllers
 
         public IActionResult Index()
         {
-            if (_session.BuscarSessaoDoUsuario() != null) return RedirectToAction("Index", "Home");
+            if (_session.BuscarSessaoDoUsuario() != null) 
+                return RedirectToAction("Index", "Home");
             return View("../_ViewStart");
         }
 

@@ -1,5 +1,4 @@
 ﻿using ProjetoFolha.Models;
-using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
 namespace ProjetoFolha.Helper
