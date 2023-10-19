@@ -7,9 +7,9 @@ namespace ProjetoFolha.Helper
     {   
         private readonly IHttpContextAccessor _httpContext;
 
-        public Session(IHttpContextAccessor _httpContext)
+        public Session(IHttpContextAccessor httpContext)
         {
-            _httpContext = _httpContext;
+            _httpContext = httpContext;
         }
 
         public CadastroFuncionarioModel BuscarSessaoDoUsuario()
@@ -33,3 +33,38 @@ namespace ProjetoFolha.Helper
         }
     }
 }
+
+
+/*public class Session : ISession
+    {   
+        private readonly IHttpContextAccessor _httpContext;
+
+        public Session(IHttpContextAccessor httpContext)
+        {
+            _httpContext = httpContext;
+        }
+
+        public CadastroFuncionarioModel BuscarSessaoDoUsuario()
+        {
+            byte[] valor;
+            string valorDecodificado = "";
+            if (_httpContext.HttpContext.Session.TryGetValue("sessaoUsuarioLogado", out valor))
+            {
+                valorDecodificado = Encoding.UTF8.GetString(valor);
+                return JsonConvert.DeserializeObject<CadastroFuncionarioModel>(valorDecodificado);
+            }
+
+            return null;
+        }
+
+        public void CriarSessaoDoUsuario(CadastroFuncionarioModel usuario)
+        {
+            string valor = JsonConvert.SerializeObject(usuario);
+            _httpContext.HttpContext.Session.Set("sessaoUsuarioLogado", Encoding.UTF8.GetBytes(valor));
+        }
+
+        public void RemoverSessaoUsuario()
+        {
+            _httpContext.HttpContext.Session.Remove("sessaoUsuarioLogado");
+        }
+    }*/
