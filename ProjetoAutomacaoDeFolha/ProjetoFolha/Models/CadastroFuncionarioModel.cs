@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Pomelo.EntityFrameworkCore.MySql.Query.Expressions.Internal;
+using ProjetoFolha.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Cryptography;
@@ -36,8 +37,7 @@ public class CadastroFuncionarioModel
     public string ConfirmarSenha { get; set; }
 
     public string sexoSelecionado { get; set; }
-
-
+    
     [Required(ErrorMessage = "O salario bruto é obrigatorio")]
     public double salarioBruto { get; set; }
 
@@ -45,4 +45,12 @@ public class CadastroFuncionarioModel
     {
         return senha == Senha;
     }
+
+    public DateTime dataCadastro { get; set; }
+    
+    public DateTime? dataAtualizacao { get; set; }
+
+    [Required(ErrorMessage = "O tipo de perfil é obrigatorio")]
+    public PerfilEnum Perfil { get; set; }
+
 }
