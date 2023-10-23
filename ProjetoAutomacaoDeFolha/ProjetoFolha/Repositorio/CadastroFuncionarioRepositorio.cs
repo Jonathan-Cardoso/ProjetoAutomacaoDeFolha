@@ -25,6 +25,7 @@ namespace ProjetoFolha.Repositorio
 
         public CadastroFuncionarioModel Adicionar(CadastroFuncionarioModel cadastro)
         {
+            cadastro.dataCadastro = DateTime.Now;
             Console.WriteLine("Cadastro: " + cadastro.ToString());
             _context.CadastroFuncionarioModel.Add(cadastro);
             _context.SaveChanges();
@@ -41,11 +42,13 @@ namespace ProjetoFolha.Repositorio
             cadastroDB.email = cadastro.email;
             cadastroDB.cpf = cadastro.cpf;
             cadastroDB.dataAdmissao = cadastro.dataAdmissao;
+            cadastroDB.dataAtualizacao = DateTime.Now;
             cadastroDB.senha = cadastro.senha;
             cadastroDB.ConfirmarSenha = cadastro.ConfirmarSenha;
             cadastroDB.cargo = cadastro.cargo;
             cadastroDB.salarioBruto = cadastro.salarioBruto;;
             cadastroDB.sexoSelecionado = cadastro.sexoSelecionado;
+            cadastroDB.Perfil = cadastro.Perfil;
 
             Console.WriteLine("Cadastro: " + cadastroDB.ToString());
             _context.CadastroFuncionarioModel.Update(cadastroDB);

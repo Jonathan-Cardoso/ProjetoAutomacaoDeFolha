@@ -4,12 +4,15 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-        <li class="nav-item">
-            <a class="nav-link " asp-controller="CadastroFuncionario" asp-action="Index">
-                <i class="bi bi-grid"></i>
-                <span>Cadastro Funcionário</span>
-            </a>
-        </li><!-- End Menu 01 Nav -->
+        @if (Model.Perfil == ProjetoFolha.Enums.PerfilEnum.Admin)
+        {
+            <li class="nav-item">
+                <a class="nav-link " asp-controller="CadastroFuncionario" asp-action="Index">
+                    <i class="bi bi-grid"></i>
+                    <span>Funcionários</span>
+                </a>
+            </li><!-- End Menu 01 Nav -->
+        }
 
         <li class="nav-item">
             <a class="nav-link " href="@Url.Action("Index","ConsultaBeneficio")">

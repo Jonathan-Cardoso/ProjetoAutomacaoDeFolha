@@ -4,7 +4,7 @@ using ProjetoFolha.Filters;
 namespace ProjetoFolha.Controllers
 {
     [UsuarioLogado]
-    public class HoleriteController : Controller
+    public class RestritoController : Controller
     {
         public IActionResult Index()
         {

@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ProjetoFolha.Filters;
 using ProjetoFolha.Models;
 using System.Diagnostics;
 
 namespace ProjetoFolha.Controllers
 {
+    [UsuarioLogado]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

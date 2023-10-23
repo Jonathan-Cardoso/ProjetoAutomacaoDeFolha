@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoFolha.Data;
+using ProjetoFolha.Filters;
 using ProjetoFolha.Models;
 using ProjetoFolha.Repositorio;
 using System.Security.Cryptography.X509Certificates;
@@ -8,7 +9,7 @@ using System.Text;
 namespace ProjetoFolha.Controllers
 {
 
-    
+    [UsuarioVerificacaoPerfil]
     public class CadastroFuncionarioController : Controller
     {   
         private readonly ICadastroFuncionarioRepositorio _cadastroFuncionarioRepositorio;
