@@ -6,6 +6,5 @@
         public string cargo { get; set; }
         public string dataAdmissao { get; set; }
         public string cpf { get; set; }
-
     }
 }

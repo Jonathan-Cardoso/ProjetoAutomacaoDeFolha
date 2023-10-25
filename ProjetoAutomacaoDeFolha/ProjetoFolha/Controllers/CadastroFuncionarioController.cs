@@ -8,12 +8,14 @@ using System.Text;
 
 namespace ProjetoFolha.Controllers
 {
-
     [UsuarioVerificacaoPerfil]
     public class CadastroFuncionarioController : Controller
-    {   
+    {
         private readonly ICadastroFuncionarioRepositorio _cadastroFuncionarioRepositorio;
-        public CadastroFuncionarioController(ICadastroFuncionarioRepositorio cadastroFuncionarioRepositorio)
+
+        public CadastroFuncionarioController(
+            ICadastroFuncionarioRepositorio cadastroFuncionarioRepositorio
+        )
         {
             _cadastroFuncionarioRepositorio = cadastroFuncionarioRepositorio;
         }
@@ -21,9 +23,11 @@ namespace ProjetoFolha.Controllers
         //CadastroFuncionarioModel teste = new CadastroFuncionarioModel();
         public IActionResult Index()
         {
-            List<CadastroFuncionarioModel> Funcionarios = _cadastroFuncionarioRepositorio.BuscarTodos();
+            List<CadastroFuncionarioModel> Funcionarios =
+                _cadastroFuncionarioRepositorio.BuscarTodos();
             return View(Funcionarios);
         }
+
         public IActionResult CadastroFuncionario()
         {
             return View();
@@ -34,6 +38,13 @@ namespace ProjetoFolha.Controllers
             CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
             return View(funcionario);
         }
+
+        public IActionResult GeradorDeHolerite(int id)
+        {
+            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
+            return View(funcionario);
+        }
+
         /*
         public IActionResult InativarFuncionario()
         {
@@ -42,43 +53,73 @@ namespace ProjetoFolha.Controllers
 
         [HttpPost]
         public IActionResult CadastroFuncionario(CadastroFuncionarioModel cadastro)
-        {   
+        {
             //Valida os campos do formulario
-            if (string.IsNullOrEmpty(cadastro.nome) || string.IsNullOrEmpty(cadastro.senha) || string.IsNullOrEmpty(cadastro.email))
+            if (
+                string.IsNullOrEmpty(cadastro.nome)
+                || string.IsNullOrEmpty(cadastro.senha)
+                || string.IsNullOrEmpty(cadastro.email)
+            )
             {
-                ModelState.AddModelError("", "Por favor, preencha todos os campos antes de cadastrar.");
+                ModelState.AddModelError(
+                    "",
+                    "Por favor, preencha todos os campos antes de cadastrar."
+                );
                 return View(cadastro); // Retorna a view com os dados preenchidos pelo usuário para que ele possa corrigir
             }
             Console.WriteLine("Cadastro" + cadastro);
             string senha = cadastro.senha;
-            string encodedStr = Convert.ToBase64String(Encoding.UTF8.GetBytes(senha));// Criptografia da senha
+            string encodedStr = Convert.ToBase64String(Encoding.UTF8.GetBytes(senha)); // Criptografia da senha
             cadastro.senha = encodedStr;
-            //string inputStr = Encoding.UTF8.GetString(Convert.FromBase64String(encodedStr));// discriptografia da senha 
+            //string inputStr = Encoding.UTF8.GetString(Convert.FromBase64String(encodedStr));// discriptografia da senha
             string sexo = cadastro.sexoSelecionado;
             _cadastroFuncionarioRepositorio.Adicionar(cadastro);
             return RedirectToAction("Index");
-
         }
 
         [HttpPost]
         public IActionResult EditarFuncionario(CadastroFuncionarioModel cadastro)
         {
-            
-            if (string.IsNullOrEmpty(cadastro.nome) || string.IsNullOrEmpty(cadastro.senha) || string.IsNullOrEmpty(cadastro.email))
+            if (
+                string.IsNullOrEmpty(cadastro.nome)
+                || string.IsNullOrEmpty(cadastro.senha)
+                || string.IsNullOrEmpty(cadastro.email)
+            )
             {
-                ModelState.AddModelError("", "Por favor, preencha todos os campos antes de cadastrar.");
+                ModelState.AddModelError(
+                    "",
+                    "Por favor, preencha todos os campos antes de cadastrar."
+                );
                 return View(cadastro); // Retorna a view com os dados preenchidos pelo usuário para que ele possa corrigir
             }
             Console.WriteLine("Cadastro" + cadastro);
             string senha = cadastro.senha;
-            string encodedStr = Convert.ToBase64String(Encoding.UTF8.GetBytes(senha));// Criptografia da senha
+            string encodedStr = Convert.ToBase64String(Encoding.UTF8.GetBytes(senha)); // Criptografia da senha
             cadastro.senha = encodedStr;
-            //string inputStr = Encoding.UTF8.GetString(Convert.FromBase64String(encodedStr));// discriptografia da senha 
+            //string inputStr = Encoding.UTF8.GetString(Convert.FromBase64String(encodedStr));// discriptografia da senha
             string sexo = cadastro.sexoSelecionado;
             _cadastroFuncionarioRepositorio.Atualizar(cadastro);
             return RedirectToAction("Index");
-
         }
 
+        [HttpPost]
+        public IActionResult GeradorDeHolerite(CadastroFuncionarioModel cadastro)
+        {
+            if (
+                string.IsNullOrEmpty(cadastro.nome)
+                || string.IsNullOrEmpty(cadastro.senha)
+                || string.IsNullOrEmpty(cadastro.email)
+            )
+            {
+                ModelState.AddModelError(
+                    "",
+                    "Por favor, preencha todos os campos antes de cadastrar."
+                );
+                return View(cadastro); // Retorna a view com os dados preenchidos pelo usuário para que ele possa corrigir
+            }
+            Console.WriteLine("Cadastro" + cadastro);
+            _cadastroFuncionarioRepositorio.Atualizar(cadastro);
+            return RedirectToAction("Index");
+        }
     }
 }

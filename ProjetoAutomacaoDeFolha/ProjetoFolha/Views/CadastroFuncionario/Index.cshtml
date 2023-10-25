@@ -11,9 +11,27 @@
             <div class="pagetitle">
                 <h1 class="display-4">Lista de Funcionários</h1>
             </div>
-            <div class="d-flex flex-row bd-highlight mb-3">
-                <a class="btn btn-primary" role="button" asp-controller="CadastroFuncionario" asp-action="CadastroFuncionario">Cadastrar novo funcionário</a>
-            </div>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a aria-current="page" class="btn btn-primary" role="button" asp-controller="CadastroFuncionario" asp-action="CadastroFuncionario">Cadastrar novo funcionário</a>
+                            </li>
+                            <li class="nav-item">
+                                <span class="mx-1"></span>
+                            </li>
+                            <li class="nav-item">
+                                <a aria-current="page" class="btn btn-primary" role="button" asp-controller="CadastroFuncionario" asp-action="CadastroSetor">Cadastrar novo setor</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -23,6 +41,7 @@
                         <th scope="col">Admissão</th>
                         <th scope="col">Cargo</th>
                         <th scope="col">Salário</th>
+                        <th scope="col">Perfil</th>
                         <th scope="col">Opções</th>
                     </tr>
                 </thead>
@@ -38,15 +57,20 @@
                                 <td>@funcionario.dataAdmissao</td>
                                 <td>@funcionario.cargo</td>
                                 <td>@funcionario.salarioBruto.ToString("C")</td>
+                                <td>@(funcionario.Perfil == ProjetoFolha.Enums.PerfilEnum.Admin ? "Administrador" : "Padrão")</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Exemplo básico">
                                         <a role="button" class="btn btn-primary" asp-route-id="@funcionario.Id" asp-controller="CadastroFuncionario" asp-action="EditarFuncionario">Editar</a>
                                         <a role="button" class="btn btn-danger" asp-route-id="@funcionario.Id">Inativar</a>
-                                        <a role="button" class="btn btn-info" asp-route-id="@funcionario.Id">Detalhes</a>
+                                        <a role="button" class="btn btn-info" asp-route-id="@funcionario.Id" asp-controller="CadastroFuncionario" asp-action="GeradorDeHolerite">Gerar Holerite</a>
                                     </div>
                                 </td>
                             </tr>
                         }
+                    }
+                    else
+                    {
+                        <tr class="odd"><td valign="top" colspan="5">Nenhum funcionario encontrado</td></tr>
                     }
                 </tbody>
             </table>

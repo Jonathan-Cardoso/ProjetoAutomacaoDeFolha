@@ -1,0 +1,115 @@
+﻿@model CadastroFuncionarioModel
+@{
+    ViewData["Title"] = "Gerador de Holerites";
+    Layout = "_LayoutMain";
+}
+
+<main id="main" class="main">
+    <div class="text-center">
+        <div class="pagetitle">
+            <h1>Gerador de Holerite</h1>
+        </div>
+    </div>
+    @Html.ValidationSummary()
+    <section class="section">
+        <div class="row">
+            <div class="texte-center">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Informações da Folha</h5>
+                        <form asp-controller="CadastroFuncionarioController" asp-action="GerarHolerite" method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Nome Completo</label>
+                                <div class="col-sm-10">
+                                    <input type="text" asp-for="nome" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputDate" class="col-sm-2 col-form-label">Data da Admissão</label>
+                                <div class="col-sm-10">
+                                    <input type="date" asp-for="dataAdmissao" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">CPF</label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="cpfInput" asp-for="cpf" class="form-control" maxlength="14">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Cargo</label>
+                                <div class="col-sm-10">
+                                    <select asp-for="cargo" class="form-control">
+                                        <option value="">Selecione o Cargo</option>
+                                        <option value="Desenvolvedor Trainee">Desenvolvedor Trainee</option>
+                                        <option value="Desenvolvedor Júnior">Desenvolvedor Júnior</option>
+                                        <option value="Desenvolvedor Pleno">Desenvolvedor Pleno</option>
+                                        <option value="Desenvolvedor Sênior">Desenvolvedor Sênior</option>
+                                        <!-- Adicione mais opções conforme necessário -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Salário</label>
+                                <div class="col-sm-10">
+                                    <input type="number" asp-for="salarioBruto" class="form-control">
+                                </div>
+                            </div>
+                            <!-- Adicione os campos restantes do holerite -->
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Horas Extras</label>
+                                <div class="col-sm-10">
+                                    <!--input type="number" asp-for="horasExtras" class="form-control"-->
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Desconto INSS</label>
+                                <div class="col-sm-10">
+                                    <!--input type="number" asp-for="descontoINSS" class="form-control"-->
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Desconto IR</label>
+                                <div class="col-sm-10">
+                                    <!--input type="number" asp-for="descontoIR" class="form-control"-->
+                                </div>
+                            </div>
+                            <!-- Calcule e mostre os campos Total de Vencimentos, Total de Descontos e Salário Líquido -->
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Total de Vencimentos</label>
+                                <div class="col-sm-10">
+                                    <!--input type="number" asp-for="totalVencimentos" class="form-control" readonly-->
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Total de Descontos</label>
+                                <div class="col-sm-10">
+                                    <!--input type="number" asp-for="totalDescontos" class="form-control" readonly-->
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Salário Líquido</label>
+                                <div class="col-sm-10">
+                                    <!--input type="number" asp-for="salarioLiquido" class="form-control" readonly-->
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <a role="button" class="btn btn-secondary" asp-controller="CadastroFuncionario" asp-action="Index"> Voltar</a>
+                                    <button type="submit" class="btn btn-success" asp-controller="CadastroFuncionario" asp-action="GerarHolerite">Gerar Holerite</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
