@@ -1,0 +1,46 @@
+﻿@model CadastroFuncionarioModel
+@{
+    ViewData["Title"] = "Cadastro de Setor";
+    Layout = "_LayoutMain";
+}
+
+<main id="main" class="main">
+    <div class="text-center">
+        <div class="pagetitle">
+            <h1>Cadastro de Setor</h1>
+        </div>
+    </div>
+    @Html.ValidationSummary()
+    <section class="section">
+        <div class="row">
+            <div class="texte-center">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Informações do Setor</h5>
+                        <form asp-controller="SetorController" asp-action="CadastrarSetor" method="post">
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Descrição do Setor</label>
+                                   <div class="col-sm-10">
+                                      <input type="email" asp-for="email" class="form-control">
+                                   </div>
+                                </div>
+                                <p>
+                                <p>
+                            <div class="row mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <a role="button" class="btn btn-secondary" asp-controller="CadastroFuncionario" asp-action="Index"> Voltar</a>
+                                    <button type="submit" class="btn btn-success" asp-controller="Setor" asp-action="CadastrarSetor">Cadastrar</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+

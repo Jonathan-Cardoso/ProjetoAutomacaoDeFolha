@@ -3,7 +3,7 @@
     Layout = "_LayoutMain";
 }
 
-@model RecibosDePagamentoModel
+@model CadastroFuncionarioModel
 
 <main id="main" class="main">
 
@@ -16,15 +16,7 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Informações do Funcionário</h5>
-                            <div class="mb-3">
-                                <strong class="info-label">Id:</strong> 987
-                            </div>
-                            <div class="mb-3">
-                                <strong class="info-label">Nome:</strong> Antonio da Silva
-                            </div>
-                        </div>
+                       @await Component.InvokeAsync("RecibosInfoFun")
                     </div>
                 </div>
                 <div class="col-md-6">

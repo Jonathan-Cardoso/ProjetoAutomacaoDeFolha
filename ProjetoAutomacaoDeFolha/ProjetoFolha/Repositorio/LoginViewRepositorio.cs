@@ -14,7 +14,9 @@ namespace ProjetoFolha.Repositorio
 
         public CadastroFuncionarioModel BuscarPorLogin(string login)
         {
-            return _context.CadastroFuncionarioModel.FirstOrDefault(x => x.email.ToUpper() == login.ToUpper());
+            return _context.CadastroFuncionarioModel.FirstOrDefault(
+                x => x.email.ToUpper() == login.ToUpper()
+            );
         }
     }
 }

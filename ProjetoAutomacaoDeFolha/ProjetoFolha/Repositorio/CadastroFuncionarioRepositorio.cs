@@ -4,7 +4,7 @@ using ProjetoFolha.Models;
 namespace ProjetoFolha.Repositorio
 {
     public class CadastroFuncionarioRepositorio : ICadastroFuncionarioRepositorio
-    {   
+    {
         private readonly CadastroFuncionarioContext _context;
 
         public CadastroFuncionarioRepositorio(CadastroFuncionarioContext context)
@@ -12,10 +12,9 @@ namespace ProjetoFolha.Repositorio
             _context = context;
         }
 
-
         public CadastroFuncionarioModel ListarPorId(int id)
         {
-            return _context.CadastroFuncionarioModel.FirstOrDefault(x => x.Id == id);    
+            return _context.CadastroFuncionarioModel.FirstOrDefault(x => x.Id == id);
         }
 
         public List<CadastroFuncionarioModel> BuscarTodos()
@@ -34,9 +33,9 @@ namespace ProjetoFolha.Repositorio
 
         public CadastroFuncionarioModel Atualizar(CadastroFuncionarioModel cadastro)
         {
-
             CadastroFuncionarioModel cadastroDB = ListarPorId(cadastro.Id);
-            if (cadastroDB == null) throw new System.Exception("Houve um erro na atualização do funcionario!");
+            if (cadastroDB == null)
+                throw new System.Exception("Houve um erro na atualização do funcionario!");
 
             cadastroDB.nome = cadastro.nome;
             cadastroDB.email = cadastro.email;
@@ -46,7 +45,8 @@ namespace ProjetoFolha.Repositorio
             cadastroDB.senha = cadastro.senha;
             cadastroDB.ConfirmarSenha = cadastro.ConfirmarSenha;
             cadastroDB.cargo = cadastro.cargo;
-            cadastroDB.salarioBruto = cadastro.salarioBruto;;
+            cadastroDB.salarioBruto = cadastro.salarioBruto;
+            ;
             cadastroDB.sexoSelecionado = cadastro.sexoSelecionado;
             cadastroDB.Perfil = cadastro.Perfil;
 
@@ -55,7 +55,5 @@ namespace ProjetoFolha.Repositorio
             _context.SaveChanges();
             return cadastroDB;
         }
-
     }
-
 }

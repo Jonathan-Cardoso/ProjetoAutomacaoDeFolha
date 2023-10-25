@@ -103,6 +103,17 @@
                                 </script>
                             </div>
                             <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Selecione o Setor</label>
+                                <div class="col-sm-10">
+                                    <select asp-for="nome" class="form-control">
+                                        <option value="">Selecione o Setor</option>
+                                        <option value="Administrativo">Administrativo</option>
+                                        <option value="Desenvolvimento">Desenvolvimento</option>
+                                        <option value="Almoxerifado">Almoxerifado</option>
+                                        <!-- Adicione mais opções conforme necessário -->
+                                    </select>
+                                </div>
+                            <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Cargo</label>
                                 <div class="col-sm-10">
                                     <select asp-for="cargo" class="form-control">
