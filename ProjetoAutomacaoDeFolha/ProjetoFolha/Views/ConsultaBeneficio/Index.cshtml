@@ -1,8 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Consulta Benefício";
     Layout = "_LayoutMain";
-}
 
+}
+@model CadastroFuncionarioModel
 <main id="main" class="main">
     <div class="text-center">
         <div class="pagetitle">
@@ -19,13 +20,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title"> Benefícios <img style="width:40;height:40" src="~/beneficio.png" width="40" height="40"></h5>
-                                            <p class="card-text"> Vale Alimentação</p>
-                                            <p class="card-text"> Desconto R$0,00</p>
-                                            <p class="card-text"> Data de corte: 30</p>
-                                            <p class="card-text"> Crédito: Fixo Mensal</p>
-                                        </div>
+                                        @await Component.InvokeAsync("Beneficio")
                                     </div>
                                 </div>
                                 <div class="mb-3">
