@@ -1,18 +1,27 @@
-﻿namespace ProjetoFolha.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ProjetoFolha.Models
 {
     public class RecibosDePagamentoModel
     {
+        [Key]
         public int Id { get; set; }
-        public string nome { get; set; }
-        public string dataAdmissao { get; set; }
-        public string CPF { get; set; }
-        public string cargo { get; set; }
-        public decimal salarioBruto { get; set; }
+        [Required(ErrorMessage = "O salario bruto é obrigatorio")]
+        public double SalarioBruto { get; set; }
+        [Required]
         public int HorasExtras { get; set; }
-        public decimal DescontoINSS { get; set; }
-        public decimal DescontoIR { get; set; }
-        public decimal TotalVencimentos => salarioBruto + HorasExtras;
-        public decimal TotalDescontos => DescontoINSS + DescontoIR;
-        public decimal SalarioLiquido => TotalVencimentos - TotalDescontos;
+        [Required]
+        public double DescontoINSS { get; set; }
+        [Required]
+        public double DescontoIR { get; set; }
+        [Required]
+        public double TotalVencimentos { get; set; }//=> salarioBruto + HorasExtras;
+        [Required]
+        public double TotalDescontos { get; set; }//=> DescontoINSS + DescontoIR;
+        [Required]
+        public double SalarioLiquido { get; set; }//=> TotalVencimentos - TotalDescontos
+        public int CadastroFuncionarioId { get; set; }
+        public virtual CadastroFuncionarioModel CadastroFuncionario { get; set; }
     }
 }
