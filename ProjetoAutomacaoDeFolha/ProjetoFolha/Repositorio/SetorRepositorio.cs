@@ -19,5 +19,13 @@ namespace ProjetoFolha.Repositorio
             _context.SaveChanges();
             return cadastrar;
         }
+        public List<SetorModel> BuscarTodos()
+        {
+            return _context.SetorModel.ToList();
+        }
+        public SetorModel ListarPorId(int id)
+        {
+            return _context.SetorModel.FirstOrDefault(x => x.Id == id);
+        }
     }
 }

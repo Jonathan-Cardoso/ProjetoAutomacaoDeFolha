@@ -20,6 +20,8 @@ namespace ProjetoFolha
 
             builder.Services.AddScoped<ICadastroFuncionarioRepositorio, CadastroFuncionarioRepositorio>();
 
+            builder.Services.AddScoped<IRecibosDePagamentoRepositorio, RecibosDePagamentoRepositorio>();
+
             builder.Services.AddScoped<ILoginViewRepositorio, LoginViewRepositorio>();
 
             builder.Services.AddScoped<ISetorRepositorio, SetorRepositorio>();

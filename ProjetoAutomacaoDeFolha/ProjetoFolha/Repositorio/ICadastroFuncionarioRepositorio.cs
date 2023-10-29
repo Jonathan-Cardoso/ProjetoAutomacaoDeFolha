@@ -8,5 +8,7 @@ namespace ProjetoFolha.Repositorio
         List<CadastroFuncionarioModel> BuscarTodos();
         CadastroFuncionarioModel Adicionar(CadastroFuncionarioModel cadastro);
         CadastroFuncionarioModel Atualizar(CadastroFuncionarioModel cadastro);
+        CadastroFuncionarioModel GetCadastroFuncionarioById(int cadastroFuncionarioId);
+        List<SetorModel> BuscarSetores();
     }
 }

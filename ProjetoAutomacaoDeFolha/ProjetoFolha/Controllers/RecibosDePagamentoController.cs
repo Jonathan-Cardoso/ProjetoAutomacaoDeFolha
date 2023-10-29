@@ -26,6 +26,11 @@ namespace ProjetoFolha.Controllers
         {
             return View();
         }
+        /*public IActionResult GeradorDeHolerite(int id)
+        {
+            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
+            return View(funcionario);
+        }*/
 
         [HttpPost]
         public IActionResult GeradorDeHolerite(RecibosDePagamentoModel holerite)

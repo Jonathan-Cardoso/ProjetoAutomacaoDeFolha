@@ -38,13 +38,6 @@ namespace ProjetoFolha.Controllers
             CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
             return View(funcionario);
         }
-
-        public IActionResult GeradorDeHolerite(int id)
-        {
-            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
-            return View(funcionario);
-        }
-
         /*
         public IActionResult InativarFuncionario()
         {
@@ -102,24 +95,11 @@ namespace ProjetoFolha.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult GeradorDeHolerite(CadastroFuncionarioModel cadastro)
+        public IActionResult hth()
         {
-            if (
-                string.IsNullOrEmpty(cadastro.nome)
-                || string.IsNullOrEmpty(cadastro.senha)
-                || string.IsNullOrEmpty(cadastro.email)
-            )
-            {
-                ModelState.AddModelError(
-                    "",
-                    "Por favor, preencha todos os campos antes de cadastrar."
-                );
-                return View(cadastro); // Retorna a view com os dados preenchidos pelo usuário para que ele possa corrigir
-            }
-            Console.WriteLine("Cadastro" + cadastro);
-            _cadastroFuncionarioRepositorio.Atualizar(cadastro);
-            return RedirectToAction("Index");
+            List<SetorModel> setor =
+                _cadastroFuncionarioRepositorio.BuscarSetores();
+            return View(setor);
         }
     }
 }

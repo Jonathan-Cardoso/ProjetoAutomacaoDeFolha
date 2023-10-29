@@ -22,6 +22,11 @@ namespace ProjetoFolha.Repositorio
             return _context.CadastroFuncionarioModel.ToList();
         }
 
+        public List<SetorModel> BuscarSetores()
+        {
+            return _context.SetorModel.ToList();
+        }
+
         public CadastroFuncionarioModel Adicionar(CadastroFuncionarioModel cadastro)
         {
             cadastro.dataCadastro = DateTime.Now;
@@ -54,6 +59,10 @@ namespace ProjetoFolha.Repositorio
             _context.CadastroFuncionarioModel.Update(cadastroDB);
             _context.SaveChanges();
             return cadastroDB;
+        }
+        public CadastroFuncionarioModel GetCadastroFuncionarioById(int cadastroFuncionarioId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

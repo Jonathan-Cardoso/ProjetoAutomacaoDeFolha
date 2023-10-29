@@ -20,6 +20,13 @@ namespace ProjetoFolha.Controllers
             return View();
         }
 
+        /*public IActionResult CadastrarSetor()
+        {
+            List<SetorModel> setores =
+                _setorRepositorio.BuscarTodos();
+            return View(setores);
+        }*/
+
         [HttpPost]
         public IActionResult CadastroSetor(SetorModel setor)
         {

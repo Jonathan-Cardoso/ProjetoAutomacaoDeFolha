@@ -1,0 +1,11 @@
+﻿@model List<SetorModel>
+
+@if (Model != null && Model.Any())
+{
+    foreach (SetorModel setor in Model)
+    {
+        <option value="@setor.Id">@setor.Descricao</option>
+    }
+}
+
+
