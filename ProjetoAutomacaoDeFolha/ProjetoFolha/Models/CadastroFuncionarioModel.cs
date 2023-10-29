@@ -53,4 +53,8 @@ public class CadastroFuncionarioModel
     [Required(ErrorMessage = "O tipo de perfil é obrigatorio")]
     public PerfilEnum Perfil { get; set; }
 
+    public int SetorId { get; set; }
+
+    public virtual SetorModel setor { get; set; }
+
 }

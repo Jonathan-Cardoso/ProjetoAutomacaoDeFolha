@@ -12,4 +12,6 @@ public class CadastroFuncionarioContext : DbContext
 
     public DbSet<CadastroFuncionarioModel> CadastroFuncionarioModel { get; set; }
 
+    public DbSet<SetorModel> SetorModel { get; set; }
+
 }

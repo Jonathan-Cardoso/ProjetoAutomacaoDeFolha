@@ -22,6 +22,8 @@ namespace ProjetoFolha
 
             builder.Services.AddScoped<ILoginViewRepositorio, LoginViewRepositorio>();
 
+            builder.Services.AddScoped<ISetorRepositorio, SetorRepositorio>();
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
