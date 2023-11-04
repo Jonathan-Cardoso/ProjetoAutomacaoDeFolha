@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {}
+    "C:\\Users\\Luiz Fernando\\Documents\\GitHub\\projeto_atualizado\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {
+    "C:\\Users\\Luiz Fernando\\Documents\\GitHub\\projeto_atualizado\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
+        "projectUniqueName": "C:\\Users\\Luiz Fernando\\Documents\\GitHub\\projeto_atualizado\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
         "projectName": "ProjetoFolha",
-        "projectPath": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
-        "packagesPath": "C:\\Users\\jeffe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffe\\source\\repos\\Jonathan-Cardoso\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\obj\\",
+        "projectPath": "C:\\Users\\Luiz Fernando\\Documents\\GitHub\\projeto_atualizado\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\ProjetoFolha.csproj",
+        "packagesPath": "C:\\Users\\Luiz Fernando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luiz Fernando\\Documents\\GitHub\\projeto_atualizado\\ProjetoAutomacaoDeFolha\\ProjetoAutomacaoDeFolha\\ProjetoFolha\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jeffe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luiz Fernando\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

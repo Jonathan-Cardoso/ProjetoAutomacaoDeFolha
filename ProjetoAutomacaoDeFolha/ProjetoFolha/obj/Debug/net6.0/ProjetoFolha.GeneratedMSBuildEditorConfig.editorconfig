@@ -9,57 +9,105 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjetoFolha
 build_property.RootNamespace = ProjetoFolha
-build_property.ProjectDir = E:\Usuarios\Documentos\GitHub\ProjetoAutomacaoDeFolha\ProjetoAutomacaoDeFolha\ProjetoFolha\
+build_property.ProjectDir = C:\Users\Luiz Fernando\Documents\GitHub\projeto_atualizado\ProjetoAutomacaoDeFolha\ProjetoAutomacaoDeFolha\ProjetoFolha\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Usuarios\Documentos\GitHub\ProjetoAutomacaoDeFolha\ProjetoAutomacaoDeFolha\ProjetoFolha
+build_property.MSBuildProjectDirectory = C:\Users\Luiz Fernando\Documents\GitHub\projeto_atualizado\ProjetoAutomacaoDeFolha\ProjetoAutomacaoDeFolha\ProjetoFolha
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/CadastroFuncionario/Index.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/CadastroFuncionario/CadastroFuncionario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9GdW5jaW9uYXJpb1xDYWRhc3Ryb0Z1bmNpb25hcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/CadastroFuncionario/EditarFuncionario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9GdW5jaW9uYXJpb1xFZGl0YXJGdW5jaW9uYXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/CadastroFuncionario/GeradorDeHolerite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9GdW5jaW9uYXJpb1xHZXJhZG9yRGVIb2xlcml0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/CadastroFuncionario/InativarFuncionario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9GdW5jaW9uYXJpb1xJbmF0aXZhckZ1bmNpb25hcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/CadastroFuncionario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cm9GdW5jaW9uYXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/ConsultaBeneficio/Index.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/ConsultaBeneficio/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFCZW5lZmljaW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Holerite/Index.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Holerite/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9sZXJpdGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Home/Index.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Home/Privacy.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/RecibosDePagamento/Index.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/RecibosDePagamento/GeradorDeHolerite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaWJvc0RlUGFnYW1lbnRvXEdlcmFkb3JEZUhvbGVyaXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/RecibosDePagamento/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaWJvc0RlUGFnYW1lbnRvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/Error.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Restrito/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdHJpdG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Setor/CadastrarSetor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0b3JcQ2FkYXN0cmFyU2V0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/Components/Beneficio/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmVuZWZpY2lvXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/Components/FuncionarioIdInput/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRnVuY2lvbmFyaW9JZElucHV0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/Components/Menu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/Components/RecibosInfoFun/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUmVjaWJvc0luZm9GdW5cRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/Components/SetorSeletor/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2V0b3JTZWxldG9yXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/_LayoutMain.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/_LayoutMain.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRNYWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/_ViewImports.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/_ViewStart.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Usuarios/Documentos/GitHub/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/_LayoutLogin.cshtml]
+[C:/Users/Luiz Fernando/Documents/GitHub/projeto_atualizado/ProjetoAutomacaoDeFolha/ProjetoAutomacaoDeFolha/ProjetoFolha/Views/Shared/_LayoutLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-xdsas5ht9e
