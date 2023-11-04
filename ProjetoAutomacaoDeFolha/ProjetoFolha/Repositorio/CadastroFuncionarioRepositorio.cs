@@ -14,7 +14,7 @@ namespace ProjetoFolha.Repositorio
 
         public CadastroFuncionarioModel ListarPorId(int id)
         {
-            return _context.CadastroFuncionarioModel.FirstOrDefault(x => x.Id == id);
+            return _context.CadastroFuncionarioModel.FirstOrDefault(x => x.Cod_Fun == id);
         }
 
         public List<CadastroFuncionarioModel> BuscarTodos()
@@ -38,7 +38,7 @@ namespace ProjetoFolha.Repositorio
 
         public CadastroFuncionarioModel Atualizar(CadastroFuncionarioModel cadastro)
         {
-            CadastroFuncionarioModel cadastroDB = ListarPorId(cadastro.Id);
+            CadastroFuncionarioModel cadastroDB = ListarPorId(cadastro.Cod_Fun);
             if (cadastroDB == null)
                 throw new System.Exception("Houve um erro na atualização do funcionario!");
 
@@ -51,9 +51,10 @@ namespace ProjetoFolha.Repositorio
             cadastroDB.ConfirmarSenha = cadastro.ConfirmarSenha;
             cadastroDB.cargo = cadastro.cargo;
             cadastroDB.salarioBruto = cadastro.salarioBruto;
-            ;
             cadastroDB.sexoSelecionado = cadastro.sexoSelecionado;
             cadastroDB.Perfil = cadastro.Perfil;
+            cadastroDB.Id_ST = cadastro.Id_ST;
+
 
             Console.WriteLine("Cadastro: " + cadastroDB.ToString());
             _context.CadastroFuncionarioModel.Update(cadastroDB);

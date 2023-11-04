@@ -8,8 +8,8 @@ namespace ProjetoFolha.Data.Map
     {
         public void Configure(EntityTypeBuilder<RecibosDePagamentoModel> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.HasOne(x => x.CadastroFuncionario);
+            builder.HasKey(x => x.Id_RP);
+            builder.HasOne(x => x.CadastroFuncionarioModel);
         }
     }
 }

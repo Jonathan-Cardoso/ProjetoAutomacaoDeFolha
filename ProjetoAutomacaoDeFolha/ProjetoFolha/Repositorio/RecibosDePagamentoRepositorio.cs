@@ -14,7 +14,7 @@ namespace ProjetoFolha.Repositorio
 
         public RecibosDePagamentoModel ListarPorIdRecibo(int id)
         {
-            return _context.RecibosDePagamentoModel.FirstOrDefault(x => x.Id == id);
+            return _context.RecibosDePagamentoModel.FirstOrDefault(x => x.Cod_Fun == id);
         }
 
         public List<RecibosDePagamentoModel> BuscarTodosRecibos()
@@ -24,6 +24,8 @@ namespace ProjetoFolha.Repositorio
 
         public RecibosDePagamentoModel Gerar(RecibosDePagamentoModel gerar)
         {
+            gerar.DataEmissao = DateTime.Now.ToString("dd/MM/yyyy");
+            gerar.MesAnoRef = DateTime.Now.ToString("MM/yyyy");
             Console.WriteLine("Cadastro: " + gerar.ToString());
             _context.RecibosDePagamentoModel.Add(gerar);
             _context.SaveChanges();

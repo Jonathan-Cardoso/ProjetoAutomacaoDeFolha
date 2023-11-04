@@ -25,7 +25,7 @@ namespace ProjetoFolha.Repositorio
         }
         public SetorModel ListarPorId(int id)
         {
-            return _context.SetorModel.FirstOrDefault(x => x.Id == id);
+            return _context.SetorModel.FirstOrDefault(x => x.Id_ST == id);
         }
     }
 }

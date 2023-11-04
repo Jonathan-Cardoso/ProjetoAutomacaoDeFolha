@@ -11,10 +11,13 @@ namespace ProjetoFolha.Controllers
 
         private readonly IRecibosDePagamentoRepositorio _recibosDePagamentoRepositorio;
         private readonly ICadastroFuncionarioRepositorio _cadastroFuncionarioRepositorio;
+        private readonly ISetorRepositorio _setorRepositorio;
 
-        public RecibosDePagamentoController(IRecibosDePagamentoRepositorio recibosDePagamentoRepositorio)
+        public RecibosDePagamentoController(ISetorRepositorio setorRepositorio, IRecibosDePagamentoRepositorio recibosDePagamentoRepositorio, ICadastroFuncionarioRepositorio cadastroFuncionarioRepositorio)
         {
             _recibosDePagamentoRepositorio = recibosDePagamentoRepositorio;
+            _cadastroFuncionarioRepositorio = cadastroFuncionarioRepositorio;
+            _setorRepositorio = setorRepositorio;
         }
 
         public IActionResult Index()
@@ -22,38 +25,41 @@ namespace ProjetoFolha.Controllers
             return View();
         }
 
-        public IActionResult GeradorDeHolerite()
+        /*public IActionResult GeradorDeHolerite()
         {
             return View();
-        }
-        /*public IActionResult GeradorDeHolerite(int id)
+        }*/
+        public IActionResult GeradorDeHolerite(int id)
         {
             CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
-            return View(funcionario);
-        }*/
+            var setorModel = _setorRepositorio.ListarPorId(id);
+            funcionario.SetorModel = setorModel;
+            RecibosDePagamentoModel recibo = new RecibosDePagamentoModel();
+            recibo.CadastroFuncionarioModel = funcionario;
+            
+            return View(recibo);
+        }
 
         [HttpPost]
-        public IActionResult GeradorDeHolerite(RecibosDePagamentoModel holerite)
+        public IActionResult GeradorDeHolerite(RecibosDePagamentoModel recibo)
         {
+            
             if (ModelState.IsValid)
             {
-                CadastroFuncionarioModel cadastroFuncionario = _cadastroFuncionarioRepositorio.GetCadastroFuncionarioById(holerite.CadastroFuncionarioId);
 
-                if (cadastroFuncionario != null)
+
+                if (recibo.TotalVencimentos != null)
                 {
-                    // O CadastroFuncionarioId é válido, associe o Recibo ao funcionário.
-
-                    holerite.CadastroFuncionario = cadastroFuncionario;
-                    _recibosDePagamentoRepositorio.Gerar(holerite);
+                    _recibosDePagamentoRepositorio.Gerar(recibo);
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    ModelState.AddModelError("CadastroFuncionarioId", "O CadastroFuncionarioId fornecido não é válido.");
+                    ModelState.AddModelError("TotalVencimentos", "O TotalVencimentos não foi fornecido.");
                 }
             }
 
-            return View(holerite);
+            return View(recibo);
         }
     }
 }

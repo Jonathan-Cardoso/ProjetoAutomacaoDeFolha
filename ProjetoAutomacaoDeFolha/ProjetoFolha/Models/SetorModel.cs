@@ -1,13 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoFolha.Models
 {
     public class SetorModel
     {
         [Key]
-        public int Id { get; set; }
+        public int Id_ST { get; set; }
         public string Descricao { get; set; }
-
-        public virtual ICollection<CadastroFuncionarioModel> CadastroFuncionarioModels { get; set; }
+        [NotMapped]
+        public virtual ICollection<CadastroFuncionarioModel> CadastroFuncionarioModel { get; set; }
     }
 }

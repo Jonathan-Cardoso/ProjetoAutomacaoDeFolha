@@ -12,7 +12,7 @@ public class CadastroFuncionarioModel
     // Informações de Cadastro 
 
     [Key]
-    public int Id { get; set; }
+    public int Cod_Fun { get; set; }
 
    [Required(ErrorMessage = "O nome é obrigatório")]
     public string nome {  get; set; }
@@ -52,9 +52,10 @@ public class CadastroFuncionarioModel
 
     [Required(ErrorMessage = "O tipo de perfil é obrigatorio")]
     public PerfilEnum Perfil { get; set; }
-
-    public int SetorId { get; set; }
-
-    public virtual SetorModel setor { get; set; }
+    public int Id_ST { get; set; }
+    [ForeignKey("Id_ST")]
+    public SetorModel SetorModel { get; set; }
+    [NotMapped]
+    public virtual ICollection<RecibosDePagamentoModel> Recibos { get; set; }
 
 }
