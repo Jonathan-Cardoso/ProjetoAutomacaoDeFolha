@@ -35,29 +35,29 @@ namespace ProjetoFolha.Controllers
             var setorModel = _setorRepositorio.ListarPorId(id);
             funcionario.SetorModel = setorModel;
             RecibosDePagamentoModel recibo = new RecibosDePagamentoModel();
+
             recibo.CadastroFuncionarioModel = funcionario;
-            
+
+            ViewData["MyNumber"] = id;
+
+
             return View(recibo);
         }
 
         [HttpPost]
         public IActionResult GeradorDeHolerite(RecibosDePagamentoModel recibo)
         {
-            
-            if (ModelState.IsValid)
+
+            if (recibo.TotalVencimentos != null)
             {
-
-
-                if (recibo.TotalVencimentos != null)
-                {
-                    _recibosDePagamentoRepositorio.Gerar(recibo);
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    ModelState.AddModelError("TotalVencimentos", "O TotalVencimentos não foi fornecido.");
-                }
+                _recibosDePagamentoRepositorio.Gerar(recibo);
+                return RedirectToAction("Index");
             }
+            else
+            {
+                ModelState.AddModelError("TotalVencimentos", "O TotalVencimentos não foi fornecido.");
+            }
+
             return View(recibo);
         }
     }
