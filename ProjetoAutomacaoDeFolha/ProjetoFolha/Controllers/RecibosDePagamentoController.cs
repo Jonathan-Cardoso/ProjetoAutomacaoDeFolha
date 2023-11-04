@@ -58,7 +58,6 @@ namespace ProjetoFolha.Controllers
                     ModelState.AddModelError("TotalVencimentos", "O TotalVencimentos não foi fornecido.");
                 }
             }
-
             return View(recibo);
         }
     }
