@@ -22,7 +22,20 @@ namespace ProjetoFolha.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<RecibosDePagamentoModel> folhas =
+                _recibosDePagamentoRepositorio.BuscarTodosRecibos();
+            return View(folhas);
+        }
+
+        public IActionResult Holerite(int id)
+        {
+            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
+            RecibosDePagamentoModel folha =
+                _recibosDePagamentoRepositorio.ListarPorIdRecibo(id);
+            ViewData["ID"] = id;
+            //ViewData["ID2"] = id2;
+            folha.CadastroFuncionarioModel = funcionario;
+            return View(folha);
         }
 
         /*public IActionResult GeradorDeHolerite()

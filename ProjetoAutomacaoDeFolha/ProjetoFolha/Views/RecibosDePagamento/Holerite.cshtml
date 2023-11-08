@@ -1,0 +1,89 @@
+﻿@model RecibosDePagamentoModel
+
+@{
+    ViewData["Title"] = "Holerite";
+    Layout = "_LayoutMain";
+}
+<style>
+    /* Estilos CSS para a formatação da tabela */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+<main id="main" class="main">
+
+    <section class="section">
+        <div class="text-center">
+            <div class="pagetitle">
+                <h1 class="display-4">Holerite de Funcionário</h1>
+            </div>
+            <input asp-for="Cod_Fun" type="hidden" value="@ViewData["ID"]" />
+            @* <input asp-for="Id_RP" type="hidden" value="@ViewData["ID2"]" /> *@
+            @* <input type="hidden" asp-for="Id_RP" /> *@
+            @* @await Component.InvokeAsync("HoleriteInfo") *@
+            <table>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td>Nome do Funcionário</td>
+                    <td>@Model.CadastroFuncionarioModel.nome</td>
+                </tr>
+                <tr>
+                    <td>Cargo</td>
+                    <td>@Model.CadastroFuncionarioModel.cargo</td>
+                </tr>
+                <tr>
+                    <td>Salário Base</td>
+                    <td>@Model.CadastroFuncionarioModel.salarioBruto</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>Horas Extras</td>
+                    <td>@Model.HorasExtras</td>
+                </tr>
+                <tr>
+                    <td>Desconto INSS</td>
+                    <td>@Model.DescontoINSS</td>
+                </tr>
+                <tr>
+                    <td>Desconto IR</td>
+                    <td>@Model.DescontoIR</td>
+                </tr>
+                <tr>
+                    <td>Total de Vencimentos</td>
+                    <td>@Model.TotalVencimentos</td>
+                </tr>
+                <tr>
+                    <td>Total de Descontos</td>
+                    <td>@Model.DescontoINSS</td>
+                </tr>
+                <tr>
+                    <td>Salário Líquido</td>
+                    <td>@Model.SalarioLiquido</td>
+                </tr>
+            </table>
+                
+        </div>
+        <p>
+            <div class="mb-3">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <a asp-controller="RecibosDePagamento" asp-action="Index" class="btn btn-secondary"> Voltar</a>
+                </div>
+            </div>
+        </p>
+    </section>
+</main>
