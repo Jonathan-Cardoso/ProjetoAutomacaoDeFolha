@@ -14,7 +14,7 @@ namespace ProjetoFolha.Repositorio
 
         public RecibosDePagamentoModel ListarPorIdRecibo(int id)
         {
-            return _context.RecibosDePagamentoModel.FirstOrDefault(x => x.Cod_Fun == id);
+            return _context.RecibosDePagamentoModel.FirstOrDefault(x => x.Id_RP == id);
         }
 
         public List<RecibosDePagamentoModel> BuscarTodosRecibos()
@@ -31,5 +31,17 @@ namespace ProjetoFolha.Repositorio
             _context.SaveChanges();
             return gerar;
         }
+
+        public CadastroFuncionarioModel ListarPorCodFun(int Id)
+        {
+            return _context.CadastroFuncionarioModel.FirstOrDefault(x => x.Cod_Fun == Id);
+        }
+
+        //public RecibosDePagamentoModel BuscarFolha(RecibosDePagamentoModel folha)
+        //{
+        //    RecibosDePagamentoModel folha = ListarPorId(cadastro.Cod_Fun);
+        //    if (folha == null)
+        //        throw new System.Exception("Houve um erro ao tentar buscar folha!");
+        //}
     }
 }

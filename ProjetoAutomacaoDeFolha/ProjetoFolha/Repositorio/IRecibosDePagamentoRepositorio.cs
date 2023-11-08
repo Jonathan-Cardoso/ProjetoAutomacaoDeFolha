@@ -6,6 +6,8 @@ namespace ProjetoFolha.Repositorio
     {
         RecibosDePagamentoModel ListarPorIdRecibo(int id);
         List<RecibosDePagamentoModel> BuscarTodosRecibos();
+
+        CadastroFuncionarioModel ListarPorCodFun(int Id);
         RecibosDePagamentoModel Gerar(RecibosDePagamentoModel gerar);
     }
 }

@@ -29,11 +29,15 @@ namespace ProjetoFolha.Controllers
 
         public IActionResult Holerite(int id)
         {
-            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
+           
             RecibosDePagamentoModel folha =
                 _recibosDePagamentoRepositorio.ListarPorIdRecibo(id);
+
+           // RecibosDePagamentoModel holerite = new RecibosDePagamentoModel();
+           // folha = holerite;
             ViewData["ID"] = id;
             //ViewData["ID2"] = id2;
+            CadastroFuncionarioModel funcionario = _recibosDePagamentoRepositorio.ListarPorCodFun(id);
             folha.CadastroFuncionarioModel = funcionario;
             return View(folha);
         }

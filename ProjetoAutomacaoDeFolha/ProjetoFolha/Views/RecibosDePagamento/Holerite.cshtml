@@ -28,10 +28,10 @@
             <div class="pagetitle">
                 <h1 class="display-4">Holerite de Funcionário</h1>
             </div>
-            <input asp-for="Cod_Fun" type="hidden" value="@ViewData["ID"]" />
+            <input asp-for="Id_RP" type="hidden" value="@ViewData["ID"]" />
             @* <input asp-for="Id_RP" type="hidden" value="@ViewData["ID2"]" /> *@
             @* <input type="hidden" asp-for="Id_RP" /> *@
-            @* @await Component.InvokeAsync("HoleriteInfo") *@
+            @*@await Component.InvokeAsync("HoleriteInfo") *@
             <table>
                 <tr>
                     <th>Descrição</th>
@@ -76,7 +76,9 @@
                     <td>@Model.SalarioLiquido</td>
                 </tr>
             </table>
-                
+            
+            @*@await Component.InvokeAsync("RecibosSessao")*@
+
         </div>
         <p>
             <div class="mb-3">
