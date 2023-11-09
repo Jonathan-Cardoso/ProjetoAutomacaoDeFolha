@@ -16,7 +16,7 @@ namespace ProjetoFolha.Models
         [Required(ErrorMessage = "O salario bruto é obrigatorio")]
         public double SalarioBruto { get; set; }
         [Required(ErrorMessage = "A quantidade de horas extras é obrigatorio")]
-        public int HorasExtras { get; set; }
+        public double HorasExtras { get; set; }
         [Required(ErrorMessage = "O valor do desconto de INSS é obrigatorio")]
         public double DescontoINSS { get; set; }
         [Required(ErrorMessage = "O valor do desconto de IR é obrigatorio")]

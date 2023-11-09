@@ -46,7 +46,7 @@ namespace ProjetoFolha.Controllers
         {
             return View();
         }*/
-        public IActionResult GeradorDeHolerite(int id)
+        /*public IActionResult GeradorDeHolerite(int id)
         {
             CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
             var setorModel = _setorRepositorio.ListarPorId(id);
@@ -59,7 +59,40 @@ namespace ProjetoFolha.Controllers
 
 
             return View(recibo);
+        }*/
+
+        //Metodo anterior esta comentado acima (Calculos estão na Model: MetodosCalculoModel)
+        public IActionResult GeradorDeHolerite(int id)
+        {
+            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
+            SetorModel setorModel = _setorRepositorio.ListarPorId(funcionario.SetorModel.Id_ST);
+            funcionario.SetorModel = setorModel;
+            RecibosDePagamentoModel recibos = _recibosDePagamentoRepositorio.ListarPorIdRecibo(funcionario.recibosDePagamento.Id_RP);
+
+            // Adiciona os cálculos aqui
+            MetodosCalculoModel metodosCalculo = new MetodosCalculoModel();
+            metodosCalculo.CalcularSalarioBruto(funcionario.recibosDePagamento.HorasExtras);
+            double inss = metodosCalculo.CalcularINSS(funcionario.salarioBruto);
+            double irrf = metodosCalculo.CalcularIRRF(funcionario.salarioBruto, inss);
+
+            // Define os valores nos atributos do funcionário
+            funcionario.recibosDePagamento.DescontoINSS = inss;
+            funcionario.recibosDePagamento.DescontoIR = irrf;
+            funcionario.recibosDePagamento.TotalVencimentos = funcionario.salarioBruto + funcionario.recibosDePagamento.HorasExtras;
+            funcionario.recibosDePagamento.TotalDescontos = inss + irrf;
+            funcionario.recibosDePagamento.SalarioLiquido = funcionario.recibosDePagamento.TotalVencimentos - funcionario.recibosDePagamento.TotalDescontos;
+
+            RecibosDePagamentoModel recibo = new RecibosDePagamentoModel
+            {
+                CadastroFuncionarioModel = funcionario
+            };
+
+            ViewData["MyNumber"] = id;
+
+            return View(recibo);
         }
+
+
 
         [HttpPost]
         public IActionResult GeradorDeHolerite(RecibosDePagamentoModel recibo)
