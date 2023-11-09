@@ -29,12 +29,12 @@ namespace ProjetoFolha.Controllers
 
         public IActionResult Holerite(int id)
         {
-           
+
             RecibosDePagamentoModel folha =
                 _recibosDePagamentoRepositorio.ListarPorIdRecibo(id);
 
-           // RecibosDePagamentoModel holerite = new RecibosDePagamentoModel();
-           // folha = holerite;
+            // RecibosDePagamentoModel holerite = new RecibosDePagamentoModel();
+            // folha = holerite;
             ViewData["ID"] = id;
             //ViewData["ID2"] = id2;
             CadastroFuncionarioModel funcionario = _recibosDePagamentoRepositorio.ListarPorCodFun(id);
@@ -65,31 +65,35 @@ namespace ProjetoFolha.Controllers
         public IActionResult GeradorDeHolerite(int id)
         {
             CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
-            SetorModel setorModel = _setorRepositorio.ListarPorId(funcionario.SetorModel.Id_ST);
+            SetorModel setorModel = _setorRepositorio.ListarPorId(funcionario.Id_ST);
             funcionario.SetorModel = setorModel;
-            RecibosDePagamentoModel recibos = _recibosDePagamentoRepositorio.ListarPorIdRecibo(funcionario.recibosDePagamento.Id_RP);
-
-            // Adiciona os cálculos aqui
-            MetodosCalculoModel metodosCalculo = new MetodosCalculoModel();
-            metodosCalculo.CalcularSalarioBruto(funcionario.recibosDePagamento.HorasExtras);
+            //List<RecibosDePagamentoModel> recibos = _recibosDePagamentoRepositorio.BuscarTodosRecibos(funcionario.Cod_Fun);
+            RecibosDePagamentoModel recibo = _recibosDePagamentoRepositorio.ListarPorIdRecibo(funcionario.Cod_Fun);
+            funcionario.recibosDePagamento = recibo;
+           // Adiciona os cálculos aqui
+           MetodosCalculoModel metodosCalculo = new MetodosCalculoModel();
+            //metodosCalculo.CalcularSalarioBruto(funcionario.recibosDePagamento.HorasExtras);
             double inss = metodosCalculo.CalcularINSS(funcionario.salarioBruto);
             double irrf = metodosCalculo.CalcularIRRF(funcionario.salarioBruto, inss);
 
-            // Define os valores nos atributos do funcionário
+            //Define os valores nos atributos do funcionário
+
             funcionario.recibosDePagamento.DescontoINSS = inss;
             funcionario.recibosDePagamento.DescontoIR = irrf;
             funcionario.recibosDePagamento.TotalVencimentos = funcionario.salarioBruto + funcionario.recibosDePagamento.HorasExtras;
             funcionario.recibosDePagamento.TotalDescontos = inss + irrf;
             funcionario.recibosDePagamento.SalarioLiquido = funcionario.recibosDePagamento.TotalVencimentos - funcionario.recibosDePagamento.TotalDescontos;
 
-            RecibosDePagamentoModel recibo = new RecibosDePagamentoModel
-            {
-                CadastroFuncionarioModel = funcionario
-            };
+            //RecibosDePagamentoModel recibo1 = new RecibosDePagamentoModel
+            //{
+            //    CadastroFuncionarioModel = funcionario
+            //};
+
+            funcionario.recibosDePagamento.CadastroFuncionarioModel = funcionario;
 
             ViewData["MyNumber"] = id;
 
-            return View(recibo);
+            return View(funcionario.recibosDePagamento);
         }
 
 

@@ -14,7 +14,12 @@ namespace ProjetoFolha.Repositorio
 
         public RecibosDePagamentoModel ListarPorIdRecibo(int id)
         {
-            return _context.RecibosDePagamentoModel.FirstOrDefault(x => x.Id_RP == id);
+            return _context.RecibosDePagamentoModel.FirstOrDefault(x => x.Cod_Fun == id);
+        }
+
+        public List<RecibosDePagamentoModel> BuscarTodosRecibos(int id)
+        {
+            return _context.RecibosDePagamentoModel.Where(x => x.Cod_Fun == id).ToList();
         }
 
         public List<RecibosDePagamentoModel> BuscarTodosRecibos()
