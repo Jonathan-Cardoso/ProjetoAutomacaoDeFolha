@@ -39,8 +39,6 @@ namespace ProjetoFolha
                 o.Cookie.HttpOnly = true;
                 o.Cookie.IsEssential = true;
             });
-
-
             // Configurar servi�os de autentica��o
             /*builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>

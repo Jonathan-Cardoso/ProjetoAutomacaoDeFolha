@@ -1,5 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model CadastroFuncionarioModel
 @{
+    ViewData["Title"] = "Confirmação remover o cadastro";
+    Layout = "_LayoutMain";
 }
+
+<main id="main" class="main">
+
+    <section class="section">
+        <div class="text-center">
+            <div class="pagetitle">
+                <h1 class="display-4">Remover Cadastro de Funcionário</h1>
+            </div>
+            <div class="card mx-auto">
+                <div class="card-body text-center">
+                    <div class="text-center">
+                        </br>
+                        <h4>Realmente deseja remover o cadastro do(a) @Model.nome?</h4>
+                    </div>
+                    </div>
+                </div>
+            <a class="btn btn-primary btn-block" asp-action="Index" asp-controller="CadastroFuncionario" role="button">Cancelar exclusão</a>
+            <a class="btn btn-danger btn-block" asp-action="DeletarCadastro" asp-controller="CadastroFuncionario" asp-route-id="@Model.Cod_Fun" role="button">Confirmar exclusão</a>
+    </section>
+</main>

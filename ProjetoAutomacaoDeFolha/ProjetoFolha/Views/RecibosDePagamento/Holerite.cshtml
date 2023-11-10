@@ -28,26 +28,17 @@
             <div class="pagetitle">
                 <h1 class="display-4">Holerite de Funcionário</h1>
             </div>
+            <div class="card mx-auto">
+                <div class="card-body text-center">
             <input asp-for="Id_RP" type="hidden" value="@ViewData["ID"]" />
             @* <input asp-for="Id_RP" type="hidden" value="@ViewData["ID2"]" /> *@
             @* <input type="hidden" asp-for="Id_RP" /> *@
-            @*@await Component.InvokeAsync("HoleriteInfo") *@
+            @await Component.InvokeAsync("HoleriteInfo")
+            <td class="display-4">Dados do Holerite do mês de referência: @Model.MesAnoRef</td>
             <table>
                 <tr>
-                    <th>Descrição</th>
-                    <th>Valor</th>
-                </tr>
-                <tr>
-                    <td>Nome do Funcionário</td>
-                    <td>@Model.CadastroFuncionarioModel.nome</td>@*Adicionar os atributos nome, cargo e salario bruto na model recibos de pagamento*@
-                </tr>
-                <tr>
-                    <td>Cargo</td>
-                    <td>@Model.CadastroFuncionarioModel.cargo</td>
-                </tr>
-                <tr>
-                    <td>Salário Base</td>
-                    <td>@Model.CadastroFuncionarioModel.salarioBruto</td>
+                    <td>ID FUNCIONARIO</td>
+                    <td>@Model.Cod_Fun</td>
                 </tr>
             </table>
             <table>
@@ -55,37 +46,43 @@
                     <td>Horas Extras</td>
                     <td>@Model.HorasExtras</td>
                 </tr>
-                <tr>
-                    <td>Desconto INSS</td>
-                    <td>@Model.DescontoINSS</td>
-                </tr>
-                <tr>
-                    <td>Desconto IR</td>
-                    <td>@Model.DescontoIR</td>
-                </tr>
-                <tr>
-                    <td>Total de Vencimentos</td>
-                    <td>@Model.TotalVencimentos</td>
-                </tr>
-                <tr>
-                    <td>Total de Descontos</td>
-                    <td>@Model.DescontoINSS</td>
-                </tr>
-                <tr>
-                    <td>Salário Líquido</td>
-                    <td>@Model.SalarioLiquido</td>
-                </tr>
+                        <tr>
+                            <td>Desconto INSS</td>
+                            <td>@string.Format("R${0:0.00}", Model.DescontoINSS)</td>
+                        </tr>
+                        <tr>
+                            <td>Desconto IR</td>
+                            <td>@string.Format("R${0:0.00}", Model.DescontoIR)</td>
+                        </tr>
+                        <tr>
+                            <td>Total de Vencimentos</td>
+                            <td>@string.Format("R${0:0.00}", Model.TotalVencimentos)</td>
+                        </tr>
+                        <tr>
+                            <td>Total de Descontos</td>
+                            <td>@string.Format("R${0:0.00}", Model.TotalDescontos)</td>
+                        </tr>
+                        <tr>
+                            <td>Salário Líquido</td>
+                            <td>@string.Format("R${0:0.00}", Model.SalarioLiquido)</td>
+                        </tr>
+
+                
             </table>
+            <td class="display-4">Data de emissão da folha: @Model.DataEmissao</td>
             
             @*@await Component.InvokeAsync("RecibosSessao")*@
 
         </div>
-        <p>
-            <div class="mb-3">
-                <div class="d-flex flex-row bd-highlight mb-3">
-                    <a asp-controller="RecibosDePagamento" asp-action="Index" class="btn btn-secondary"> Voltar</a>
-                </div>
+        
             </div>
-        </p>
+            <p>
+                <div class="mb-3">
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <a asp-controller="RecibosDePagamento" asp-action="Index" class="btn btn-secondary"> Voltar</a>
+                    </div>
+                </div>
+            </p>
+            </div>
     </section>
 </main>

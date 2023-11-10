@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProjetoFolha.Data;
 using ProjetoFolha.Filters;
 using ProjetoFolha.Models;
@@ -38,11 +39,28 @@ namespace ProjetoFolha.Controllers
             CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
             return View(funcionario);
         }
-        /*
-        public IActionResult InativarFuncionario()
+        
+        public IActionResult InativarFuncionario(int id)
         {
-            return View();
-        }*/
+            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
+            return View(funcionario);
+        }
+
+        public IActionResult DeletarCadastro(int id)
+        {
+            try
+            {
+                bool apagado = _cadastroFuncionarioRepositorio.Apagar(id);
+
+                if (apagado) TempData["MensagemSucesso"] = "Contato apagado com sucesso!"; else TempData["MensagemErro"] = "Ops, não conseguimos cadastrar seu contato, tente novamante!";
+                return RedirectToAction("Index");
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos apagar seu contato, tente novamante, detalhe do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
+        }
 
         [HttpPost]
         public IActionResult CadastroFuncionario(CadastroFuncionarioModel cadastro)
@@ -100,6 +118,6 @@ namespace ProjetoFolha.Controllers
             List<SetorModel> setor =
                 _cadastroFuncionarioRepositorio.BuscarSetores();
             return View(setor);
-        }
+        } 
     }
 }

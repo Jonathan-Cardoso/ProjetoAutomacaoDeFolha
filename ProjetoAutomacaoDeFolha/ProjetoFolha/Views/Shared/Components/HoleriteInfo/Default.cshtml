@@ -1,5 +1,5 @@
 ﻿@model ProjetoFolha.Models.CadastroFuncionarioModel
-
+<td class="display-4">Dados do Usuario da Sessão</td>
 <table>
     <tr>
         <th>Descrição</th>
@@ -15,6 +15,6 @@
     </tr>
     <tr>
         <td>Salário Base</td>
-        <td>@Model.salarioBruto</td>
+        <td>@string.Format("R${0:0.00}", Model.salarioBruto)</td>
     </tr>
 </table>

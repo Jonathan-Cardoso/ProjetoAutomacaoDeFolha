@@ -46,12 +46,18 @@ namespace ProjetoFolha.Controllers
         {
             return View();
         }*/
-        /*public IActionResult GeradorDeHolerite(int id)
+        public IActionResult GeradorDeHolerite(int id)
         {
-            CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
+            CadastroFuncionarioModel funcionario = _recibosDePagamentoRepositorio.ListarPorCodFun(id);
             var setorModel = _setorRepositorio.ListarPorId(id);
             funcionario.SetorModel = setorModel;
             RecibosDePagamentoModel recibo = new RecibosDePagamentoModel();
+            //MetodosCalculoModel metodo = new MetodosCalculoModel();
+            recibo.SalarioBruto = funcionario.salarioBruto;
+            //int horasExtras = recibo.HorasExtras;
+            //double salarioBruto = recibo.SalarioBruto;
+            //double totalSalarioBruto = metodo.CalcularSalarioBruto(horasExtras, salarioBruto);
+            //recibo.TotalVencimentos = totalSalarioBruto;
 
             recibo.CadastroFuncionarioModel = funcionario;
 
@@ -59,10 +65,10 @@ namespace ProjetoFolha.Controllers
 
 
             return View(recibo);
-        }*/
+        }
 
         //Metodo anterior esta comentado acima (Calculos estão na Model: MetodosCalculoModel)
-        public IActionResult GeradorDeHolerite(int id)
+        /*public IActionResult GeradorDeHolerite(int id)
         {
             CadastroFuncionarioModel funcionario = _cadastroFuncionarioRepositorio.ListarPorId(id);
             SetorModel setorModel = _setorRepositorio.ListarPorId(funcionario.Id_ST);
@@ -84,27 +90,41 @@ namespace ProjetoFolha.Controllers
             funcionario.recibosDePagamento.TotalDescontos = inss + irrf;
             funcionario.recibosDePagamento.SalarioLiquido = funcionario.recibosDePagamento.TotalVencimentos - funcionario.recibosDePagamento.TotalDescontos;
 
-            //RecibosDePagamentoModel recibo1 = new RecibosDePagamentoModel
-            //{
-            //    CadastroFuncionarioModel = funcionario
-            //};
-
             funcionario.recibosDePagamento.CadastroFuncionarioModel = funcionario;
 
             ViewData["MyNumber"] = id;
 
             return View(funcionario.recibosDePagamento);
-        }
+        }*/
 
 
 
         [HttpPost]
-        public IActionResult GeradorDeHolerite(RecibosDePagamentoModel recibo)
+        public IActionResult GeradorDeHolerite(RecibosDePagamentoModel holerite)
         {
+            //RecibosDePagamentoModel holerite = new RecibosDePagamentoModel();
+            MetodosCalculoModel metodo = new MetodosCalculoModel();
+            int horasExtras = holerite.HorasExtras;
+            double salarioBruto = holerite.SalarioBruto;
+            double totalSalarioBruto = metodo.CalcularSalarioBruto(horasExtras, salarioBruto);
+            holerite.TotalVencimentos = totalSalarioBruto;
+            double calcINSS = holerite.TotalVencimentos;
+            double descontoINSS = metodo.CalcularINSS(calcINSS);
+            double valorDescINSS = descontoINSS;
+            double calcIRRF = holerite.TotalVencimentos;
+            double descontoIRRF = metodo.CalcularIRRF(calcIRRF, valorDescINSS);
 
-            if (recibo.TotalVencimentos != null)
+            //double totalDescontos = (descontoINSS - metodo.CalcularIRRF(calcIRRF, valorDescINSS));
+            double totalDescontos = descontoINSS+descontoIRRF;
+            // Supondo que você tenha um objeto chamado "holerite"
+            holerite.DescontoINSS = descontoINSS;
+            holerite.DescontoIR = descontoIRRF;
+            holerite.TotalDescontos = totalDescontos;
+            holerite.SalarioLiquido = holerite.TotalVencimentos - totalDescontos;
+
+            if (holerite.TotalVencimentos != null)
             {
-                _recibosDePagamentoRepositorio.Gerar(recibo);
+                _recibosDePagamentoRepositorio.Gerar(holerite);
                 return RedirectToAction("Index");
             }
             else
@@ -112,7 +132,7 @@ namespace ProjetoFolha.Controllers
                 ModelState.AddModelError("TotalVencimentos", "O TotalVencimentos não foi fornecido.");
             }
 
-            return View(recibo);
+            return View(holerite);
         }
     }
 }

@@ -85,7 +85,7 @@
                                 <td class="webgrid-columns"><p>@folha.Cod_Fun</p></td>
                                 <td class="webgrid-columns"><p>@folha.DataEmissao</p></td>
                                 <td class="webgrid-columns"><p>@folha.MesAnoRef</p></td>
-                                <td class="webgrid-columns">@folha.SalarioLiquido</td>
+                                <td class="webgrid-columns">@string.Format("R${0:0.00}", folha.SalarioLiquido)</td>
                                 <td class="webgrid-columns">
                                     <div class="pagination-centered">
                                         <a role="button" class="btn btn-primary" asp-route-id="@folha.Id_RP" asp-controller="RecibosDePagamento" asp-action="Holerite">Visualizar</a>
