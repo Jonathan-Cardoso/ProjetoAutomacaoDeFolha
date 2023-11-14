@@ -1,4 +1,5 @@
-﻿using ProjetoFolha.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using ProjetoFolha.Data;
 using ProjetoFolha.Models;
 
 namespace ProjetoFolha.Repositorio
@@ -60,6 +61,18 @@ namespace ProjetoFolha.Repositorio
             _context.CadastroFuncionarioModel.Update(cadastroDB);
             _context.SaveChanges();
             return cadastroDB;
+        }
+
+        public bool Apagar(int id)
+        {
+            CadastroFuncionarioModel cadastroDB = ListarPorId(id);
+
+            if (cadastroDB == null) throw new Exception("Houve um erro na deleção do cadastro!");
+
+            _context.CadastroFuncionarioModel.Remove(cadastroDB);
+            _context.SaveChanges();
+
+            return true;
         }
         public CadastroFuncionarioModel GetCadastroFuncionarioById(int cadastroFuncionarioId)
         {

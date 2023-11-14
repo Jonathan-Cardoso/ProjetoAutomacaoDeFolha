@@ -10,5 +10,6 @@ namespace ProjetoFolha.Repositorio
         CadastroFuncionarioModel Atualizar(CadastroFuncionarioModel cadastro);
         CadastroFuncionarioModel GetCadastroFuncionarioById(int cadastroFuncionarioId);
         List<SetorModel> BuscarSetores();
+        bool Apagar(int id);
     }
 }

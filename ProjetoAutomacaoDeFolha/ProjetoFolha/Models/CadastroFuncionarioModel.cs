@@ -58,4 +58,7 @@ public class CadastroFuncionarioModel
     [NotMapped]
     public virtual ICollection<RecibosDePagamentoModel> Recibos { get; set; }
 
+    [NotMapped]
+    public RecibosDePagamentoModel recibosDePagamento { get; set; }
+
 }

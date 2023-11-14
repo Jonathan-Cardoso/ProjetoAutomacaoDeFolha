@@ -3,7 +3,7 @@
     Layout = "_LayoutMain";
 }
 
-@model RecibosDePagamentoModel
+@model List<RecibosDePagamentoModel>
 
 <main id="main" class="main">
 
@@ -16,7 +16,7 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <div class="card">
-                       @await Component.InvokeAsync("RecibosInfoFun")
+                        @await Component.InvokeAsync("RecibosInfoFun")
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -51,18 +51,24 @@
                     background-color: #f2f2f2;
                 }
             </style>
-
             <table class="text-center">
+                <!-- Cabeçalho da tabela -->
                 <thead>
                     <tr class="">
                         <th scope="col">
-                            <a href="/Holerith/Painel?sort=data&amp;sortdir=ASC">Data</a>
+                            <a href="/Holerith/Painel?sort=data&amp;sortdir=ASC">#</a>
                         </th>
                         <th scope="col">
-                            <a href="/Holerith/Painel?sort=nomeCalc&amp;sortdir=ASC">Tipo Pagamento</a>
+                            <a href="/Holerith/Painel?sort=data&amp;sortdir=ASC">#ID FUN</a>
                         </th>
                         <th scope="col">
-                            <a href="/Holerith/Painel?sort=valor&amp;sortdir=ASC">Valor R$</a>
+                            <a href="/Holerith/Painel?sort=data&amp;sortdir=ASC">Data de Emissão</a>
+                        </th>
+                        <th scope="col">
+                            <a href="/Holerith/Painel?sort=nomeCalc&amp;sortdir=ASC">Mês de referência</a>
+                        </th>
+                        <th scope="col">
+                            <a href="/Holerith/Painel?sort=valor&amp;sortdir=ASC">Salário Liquido</a>
                         </th>
                         <th scope="col">
                             <a href="/Holerith/Painel?sort=Visualizar+Documento&amp;sortdir=ASC">Visualizar Holerite</a>
@@ -70,34 +76,39 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="webgrid-row-style">
-                        <td class="webgrid-columns"><p>01/06/2023</p></td>
-                        <td class="webgrid-columns"><p>PAGAMENTO MENSAL</p></td>
-                        <td class="webgrid-columns">2.448,00</td>
-                        <td class="webgrid-columns">
-                            <div class="pagination-centered">
-                                <a role="button" class="btn btn-primary" asp-controller="Holerite" asp-action="Index">Visualizar</a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="webgrid-alternating-row">
-                        <td class="webgrid-columns"><p>01/07/2023</p></td>
-                        <td class="webgrid-columns"><p>PAGAMENTO MENSAL</p></td>
-                        <td class="webgrid-columns">2.448,00</td>
-                        <td class="webgrid-columns">
-                            <div class="pagination-centered">
-                                <a role="button" class="btn btn-primary" asp-controller="Holerite" asp-action="Index">Visualizar</a>
-                            </div>
-                        </td>
-                    </tr>
+                    @if (Model != null && Model.Any())
+                    {
+                        @foreach (RecibosDePagamentoModel folha in Model)
+                        {
+                            <tr class="webgrid-row-style">
+                                <th scope="row">@folha.Id_RP</th>
+                                <td class="webgrid-columns"><p>@folha.Cod_Fun</p></td>
+                                <td class="webgrid-columns"><p>@folha.DataEmissao</p></td>
+                                <td class="webgrid-columns"><p>@folha.MesAnoRef</p></td>
+                                <td class="webgrid-columns">@string.Format("R${0:0.00}", folha.SalarioLiquido)</td>
+                                <td class="webgrid-columns">
+                                    <div class="pagination-centered">
+                                        <a role="button" class="btn btn-primary" asp-route-id="@folha.Id_RP" asp-controller="RecibosDePagamento" asp-action="Holerite">Visualizar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr class="odd"><td valign="top" colspan="4">Nenhuma folha gerada</td></tr>
+                    }
                 </tbody>
+                <!-- Corpo da tabela -->
+            @* @await Component.InvokeAsync("RecibosSessao") *@
             </table>
         </div>
         <p>
-        <div class="mb-3">
-            <div class="d-flex flex-row bd-highlight mb-3">
-                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary"> Voltar</a>
+            <div class="mb-3">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary"> Voltar</a>
+                </div>
             </div>
-        </div>
+        </p>
     </section>
 </main>

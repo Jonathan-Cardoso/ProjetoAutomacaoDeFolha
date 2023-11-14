@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 using ProjetoFolha.Data.Map;
 using ProjetoFolha.Models;
 
@@ -41,27 +42,52 @@ public class CadastroFuncionarioContext : DbContext
         base.OnModelCreating(modelBuilder);
     }
 
-
-    /*public IQueryable<InformacoesCompletasModel> BuscarInformacoesCompletas()
+    /* Método para cadastrar o usuário administrador e os setores
+    public void CadastrarUsuarioESetores()
     {
-        var query = from funcionario in CadastroFuncionarioModel
-                    join recibo in RecibosDePagamentoModel on funcionario.Id equals recibo.CadastroFuncionarioId
-                    join setor in SetorModel on funcionario.SetorId equals setor.Id
-                    select new InformacoesCompletasModel
-                    {
-                        FuncionarioId = funcionario.Id,
-                        FuncionarioNome = funcionario.nome,
-                        FuncionarioCpf = funcionario.cpf,
-                        SetorDescricao = setor.Descricao,
-                        SalarioBruto = recibo.SalarioBruto,
-                        HorasExtras = recibo.HorasExtras,
-                        DescontoINSS = recibo.DescontoINSS,
-                        DescontoIR = recibo.DescontoIR,
-                        TotalVencimentos = recibo.TotalVencimentos,
-                        TotalDescontos = recibo.TotalDescontos,
-                        SalarioLiquido = recibo.SalarioLiquido
-                    };
+        using (var connection = new MySqlConnection("server=localhost;database=folhapagamento;user=root;password=12345"))
+        {
+            connection.Open();
 
-        return query;
+            // Cadastro do usuário administrador
+            using (var command = new MySqlCommand(
+                "INSERT INTO `folhapagamento`.`cadastrofuncionariomodel` " +
+                "(`Cod_Fun`, `nome`, `cpf`, `cargo`, `dataAdmissao`, `email`, `senha`, `sexoSelecionado`, `salarioBruto`, `dataCadastro`, `Perfil`, `Id_ST`) " +
+                "VALUES ('1', 'User Administrador', '010.010.010-10', 'Administrador', '2023-10-20', 'admin@admin.com', 'YWFh', " +
+                "'Não Informado', '1320', '2023-10-20 00:00:00.000000', '1', '1')", connection))
+            {
+                command.ExecuteNonQuery();
+            }
+
+            // Cadastro dos setores
+            string[] setores = { "Administrador", "Desenvolvimento", "Almoxerifado", "DBA" };
+
+            foreach (var setor in setores)
+            {
+                using (var command = new MySqlCommand(
+                    "INSERT INTO `folhapagamento`.`setormodel` (`Id_ST`, `Descricao`) " +
+                    $"VALUES (NULL, '{setor}')", connection))
+                {
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        // Se ocorrer um erro de chave duplicada, o setor já existe, e você pode lidar com isso conforme necessário
+                        if (ex.Number == (int)MySqlErrorCode.DuplicateKeyEntry)
+                        {
+                            Console.WriteLine($"O setor '{setor}' já está cadastrado.");
+                        }
+                        else
+                        {
+                            // Outros erros, você pode lidar conforme necessário
+                            Console.WriteLine($"Erro ao cadastrar o setor '{setor}': {ex.Message}");
+                        }
+                    }
+                }
+            }
+        }
     }*/
+
 }

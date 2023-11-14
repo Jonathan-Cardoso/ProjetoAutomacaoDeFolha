@@ -50,10 +50,11 @@
                                     <input type="date" asp-for="dataAdmissao" class="form-control">
                                 </div>
                             </div>
+                            <!-- Validação de CPF -->
                             <div class="row mb-3">
-                                <label for="inputText" class="col-sm-2 col-form-label">CPF</label>
+                                <label for="cpfInput" class="col-sm-2 col-form-label">CPF</label>
                                 <div class="col-sm-10">
-                                    <input type="text" id="cpfInput" asp-for="cpf" class="form-control" maxlength="14">
+                                    <input type="text" id="cpfInput" asp-for="cpf" class="form-control" minlength="14" maxlength="14" required>
                                 </div>
                             </div>
                             <script>
@@ -69,19 +70,30 @@
                                         cpf = cpf.substring(0, 11) + '-' + cpf.substring(11, 14);
                                     }
                                     this.value = cpf;
+
+                                    validarTamanhoCPF();
                                 });
+
+                                function validarTamanhoCPF() {
+                                    let cpf = document.getElementById('cpfInput').value.replace(/\D/g, '');
+                                    if (cpf.length < 11) {
+                                        document.getElementById('cpfInput').setCustomValidity('O CPF deve ter pelo menos 14 caracteres');
+                                    } else {
+                                        document.getElementById('cpfInput').setCustomValidity('');
+                                    }
+                                }
                             </script>
                             <!-- Validação de senha -->
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Criar Senha</label>
                                 <div class="col-sm-10">
-                                    <input type="password" asp-for="senha" class="form-control" id="senha">
+                                    <input type="password" asp-for="senha" class="form-control" id="senha" minlength="8" required>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Repita a Senha</label>
                                 <div class="col-sm-10">
-                                    <input type="password" asp-for="ConfirmarSenha" class="form-control" id="confirmarSenha">
+                                    <input type="password" asp-for="ConfirmarSenha" class="form-control" id="confirmarSenha" minlength="8" required>
                                 </div>
                                 <script>
                                     document.addEventListener('DOMContentLoaded', function () {
@@ -96,11 +108,20 @@
                                             }
                                         }
 
+                                        function validarTamanhoSenha() {
+                                            if (senha.value.length < 8) {
+                                                senha.setCustomValidity('A senha deve ter pelo menos 8 caracteres');
+                                            } else {
+                                                senha.setCustomValidity('');
+                                            }
+                                        }
+
                                         senha.addEventListener('change', validarSenha);
                                         confirmarSenha.addEventListener('keyup', validarSenha);
+
+                                        senha.addEventListener('input', validarTamanhoSenha);
                                     });
                                 </script>
-
                             </div>
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Selecione o Setor</label>
@@ -132,19 +153,21 @@
                                     <input type="number" asp-for="salarioBruto" class="form-control">
                                 </div>
                             </div>
-                            <fieldset class="row mb-3">
-                                <legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
-                                <div class="col-sm-10">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sexoSelecionado" id="gridRadios1" value="Masculino" checked>
-                                        <label class="form-check-label" for="gridRadios1">Masculino</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sexoSelecionado" id="gridRadios2" value="Feminino">
-                                        <label class="form-check-label" for="gridRadios2">Feminino</label>
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-2 col-form-label">Sexo</label>
+                                    <div class="col-sm-10">
+                                        <select asp-for="sexoSelecionado" class="form-control">
+                                            <option selected value="Não Informado">Selecione o Genero</option>
+                                            <option value="Homem Cis">Homem Cis</option>
+                                            <option value="Mulher Cis">Mulher Cis</option>
+                                            <option value="Mulher Trans">Mulher Trans</option>
+                                            <option value="Homem Trans">Homem Trans</option>
+                                            <option value="Transgenero">Transgenero</option>
+                                            <option value="Não-Binário">Não-Binário</option>
+                                            <option value="Prefiro não dizer/Não me identifico">Prefiro não dizer/Não me identifico</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </fieldset>
                             <div class="row mb-3">
                                 <div class="d-flex justify-content-between">
                                     <a role="button" class="btn btn-secondary" asp-controller="CadastroFuncionario" asp-action="Index"> Voltar</a>

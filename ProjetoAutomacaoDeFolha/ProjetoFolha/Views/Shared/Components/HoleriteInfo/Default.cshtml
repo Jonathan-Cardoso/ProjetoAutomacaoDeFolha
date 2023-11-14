@@ -1,0 +1,20 @@
+﻿@model ProjetoFolha.Models.CadastroFuncionarioModel
+<td class="display-4">Dados do Usuario da Sessão</td>
+<table>
+    <tr>
+        <th>Descrição</th>
+        <th>Valor</th>
+    </tr>
+    <tr>
+        <td>Nome do Funcionário</td>
+        <td>@Model.nome</td>
+    </tr>
+    <tr>
+        <td>Cargo</td>
+        <td>@Model.cargo</td>
+    </tr>
+    <tr>
+        <td>Salário Base</td>
+        <td>@string.Format("R${0:0.00}", Model.salarioBruto)</td>
+    </tr>
+</table>

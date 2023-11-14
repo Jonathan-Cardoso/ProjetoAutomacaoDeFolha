@@ -16,7 +16,7 @@
             <h1>Gerador de Holerite</h1>
         </div>
         <hr />
-        @* <div class="container">
+         <div class="container">
         <div class="d-flex m-3 flex-wrap">
         <div class="form-group me-5">
         <h4>Nome:</h4>
@@ -33,7 +33,7 @@
         <p>@Model.CadastroFuncionarioModel.cargo</p>
         </div>
         </div>
-        </div> *@
+        </div> 
     </div>
 
     @Html.ValidationSummary()
@@ -51,7 +51,7 @@
                                     <input type="number" asp-for="HorasExtras" class="form-control">
                                 </div>
                             </div>
-                            <div class="row mb-3">
+                            @* <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Desconto INSS</label>
                                 <div class="col-sm-10">
                                     <input type="number" asp-for="DescontoINSS" class="form-control">
@@ -63,15 +63,15 @@
                                     <input type="number" asp-for="DescontoIR" class="form-control">
                                 </div>
                             </div>
-                            </br>
+                            </br> *@
 
                             <div class="row mb-3">
-                                <label for="inputText" class="col-sm-2 col-form-label">Total de Vencimentos</label>
+                                <label for="inputText" class="col-sm-2 col-form-label">Salário Bruto</label>
                                 <div class="col-sm-10">
-                                    <input type="number" asp-for="TotalVencimentos" class="form-control">
+                                    <input type="number" asp-for="SalarioBruto" class="form-control">
                                 </div>
                             </div>
-                            <div class="row mb-3">
+                           @*  <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">Total de Descontos</label>
                                 <div class="col-sm-10">
                                     <input type="number" asp-for="TotalDescontos" class="form-control">
@@ -82,7 +82,7 @@
                                 <div class="col-sm-10">
                                     <input type="number" asp-for="SalarioLiquido" class="form-control">
                                 </div>
-                            </div>
+                            </div> *@
 
                             <div class="row mb-3">
                                 <div class="d-flex justify-content-between">
